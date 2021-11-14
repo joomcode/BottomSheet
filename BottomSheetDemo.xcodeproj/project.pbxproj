@@ -14,7 +14,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7D05F3012741359800EBDBB1 /* BottomSheet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BottomSheet.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D05F3012741359800EBDBB1 /* BottomSheetDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BottomSheetDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D05F3042741359800EBDBB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7D05F30A2741359C00EBDBB1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7D05F3102741359C00EBDBB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,7 +36,7 @@
 		7D05F2F82741359800EBDBB1 = {
 			isa = PBXGroup;
 			children = (
-				7D05F3032741359800EBDBB1 /* BottomSheet */,
+				7D05F3032741359800EBDBB1 /* BottomSheetDemo */,
 				7D05F3022741359800EBDBB1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -44,19 +44,19 @@
 		7D05F3022741359800EBDBB1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7D05F3012741359800EBDBB1 /* BottomSheet.app */,
+				7D05F3012741359800EBDBB1 /* BottomSheetDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		7D05F3032741359800EBDBB1 /* BottomSheet */ = {
+		7D05F3032741359800EBDBB1 /* BottomSheetDemo */ = {
 			isa = PBXGroup;
 			children = (
 				7D05F31A2741361000EBDBB1 /* Sources */,
 				7D05F319274135D800EBDBB1 /* Supporting Files */,
 				7D05F318274135CE00EBDBB1 /* Resources */,
 			);
-			path = BottomSheet;
+			path = BottomSheetDemo;
 			sourceTree = "<group>";
 		};
 		7D05F318274135CE00EBDBB1 /* Resources */ = {
@@ -104,9 +104,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7D05F3002741359800EBDBB1 /* BottomSheet */ = {
+		7D05F3002741359800EBDBB1 /* BottomSheetDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7D05F3152741359C00EBDBB1 /* Build configuration list for PBXNativeTarget "BottomSheet" */;
+			buildConfigurationList = 7D05F3152741359C00EBDBB1 /* Build configuration list for PBXNativeTarget "BottomSheetDemo" */;
 			buildPhases = (
 				7D05F2FD2741359800EBDBB1 /* Sources */,
 				7D05F2FE2741359800EBDBB1 /* Frameworks */,
@@ -116,9 +116,9 @@
 			);
 			dependencies = (
 			);
-			name = BottomSheet;
+			name = BottomSheetDemo;
 			productName = BottomSheet;
-			productReference = 7D05F3012741359800EBDBB1 /* BottomSheet.app */;
+			productReference = 7D05F3012741359800EBDBB1 /* BottomSheetDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -136,7 +136,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 7D05F2FC2741359800EBDBB1 /* Build configuration list for PBXProject "BottomSheet" */;
+			buildConfigurationList = 7D05F2FC2741359800EBDBB1 /* Build configuration list for PBXProject "BottomSheetDemo" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -149,7 +149,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7D05F3002741359800EBDBB1 /* BottomSheet */,
+				7D05F3002741359800EBDBB1 /* BottomSheetDemo */,
 			);
 		};
 /* End PBXProject section */
@@ -313,12 +313,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "BottomSheet/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "BottomSheetDemo/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = mikhailmaslo.BottomSheet;
+				PRODUCT_BUNDLE_IDENTIFIER = joomcode.BottomSheet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -332,12 +332,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "BottomSheet/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "BottomSheetDemo/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = mikhailmaslo.BottomSheet;
+				PRODUCT_BUNDLE_IDENTIFIER = joomcode.BottomSheet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -347,7 +347,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7D05F2FC2741359800EBDBB1 /* Build configuration list for PBXProject "BottomSheet" */ = {
+		7D05F2FC2741359800EBDBB1 /* Build configuration list for PBXProject "BottomSheetDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7D05F3132741359C00EBDBB1 /* Debug */,
@@ -356,7 +356,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7D05F3152741359C00EBDBB1 /* Build configuration list for PBXNativeTarget "BottomSheet" */ = {
+		7D05F3152741359C00EBDBB1 /* Build configuration list for PBXNativeTarget "BottomSheetDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7D05F3162741359C00EBDBB1 /* Debug */,
