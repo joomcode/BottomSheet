@@ -6,10 +6,20 @@
 //  Copyright © 2021 Joom. All rights reserved.
 //
 
-import UIKit
+import CoreGraphics
 
 extension CGSize {
-    init(uniform: Double) {
-        self.init(width: uniform, height: uniform)
+    static func uniform(_ side: CGFloat) -> CGSize {
+        CGSize(width: side, height: side)
+    }
+    
+    // MARK: - Equality
+
+    func isAlmostEqual(to other: CGSize) -> Bool {
+        width.isAlmostEqual(to: other.width) && height.isAlmostEqual(to: other.height)
+    }
+    
+    func isAlmostEqual(to other: CGSize, error: CGFloat) -> Bool {
+        width.isAlmostEqual(to: other.width, error: error) && height.isAlmostEqual(to: other.height, error: error)
     }
 }

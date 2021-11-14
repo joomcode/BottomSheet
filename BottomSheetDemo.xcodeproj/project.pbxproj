@@ -12,9 +12,12 @@
 		7D05F3112741359C00EBDBB1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D05F30F2741359C00EBDBB1 /* LaunchScreen.storyboard */; };
 		7D05F3242741371400EBDBB1 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D05F3232741371400EBDBB1 /* RootViewController.swift */; };
 		7D05F33227413A1500EBDBB1 /* libBottomSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D05F32A274139E100EBDBB1 /* libBottomSheet.a */; };
-		7D05F33727413B7200EBDBB1 /* CGSize+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D05F33627413B7200EBDBB1 /* CGSize+Helpers.swift */; };
-		7D05F33927413B8100EBDBB1 /* ScreenScale+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D05F33827413B8100EBDBB1 /* ScreenScale+Helpers.swift */; };
 		7D05F342274140F700EBDBB1 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7D05F341274140F700EBDBB1 /* SnapKit */; };
+		7D733898274144A9004D7E59 /* CGRect+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D733893274144A9004D7E59 /* CGRect+Helpers.swift */; };
+		7D733899274144A9004D7E59 /* CGPoint+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D733894274144A9004D7E59 /* CGPoint+Helpers.swift */; };
+		7D73389A274144A9004D7E59 /* CGSize+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D733895274144A9004D7E59 /* CGSize+Helpers.swift */; };
+		7D73389B274144A9004D7E59 /* BinaryFloatingPoint+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D733896274144A9004D7E59 /* BinaryFloatingPoint+Helpers.swift */; };
+		7D73389C274144A9004D7E59 /* ScreenScale+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D733897274144A9004D7E59 /* ScreenScale+Helpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,8 +50,11 @@
 		7D05F3122741359C00EBDBB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7D05F3232741371400EBDBB1 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		7D05F32A274139E100EBDBB1 /* libBottomSheet.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBottomSheet.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		7D05F33627413B7200EBDBB1 /* CGSize+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGSize+Helpers.swift"; sourceTree = "<group>"; };
-		7D05F33827413B8100EBDBB1 /* ScreenScale+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScreenScale+Helpers.swift"; sourceTree = "<group>"; };
+		7D733893274144A9004D7E59 /* CGRect+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+Helpers.swift"; sourceTree = "<group>"; };
+		7D733894274144A9004D7E59 /* CGPoint+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+Helpers.swift"; sourceTree = "<group>"; };
+		7D733895274144A9004D7E59 /* CGSize+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGSize+Helpers.swift"; sourceTree = "<group>"; };
+		7D733896274144A9004D7E59 /* BinaryFloatingPoint+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BinaryFloatingPoint+Helpers.swift"; sourceTree = "<group>"; };
+		7D733897274144A9004D7E59 /* ScreenScale+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ScreenScale+Helpers.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,8 +166,11 @@
 		7D05F33527413B6000EBDBB1 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				7D05F33827413B8100EBDBB1 /* ScreenScale+Helpers.swift */,
-				7D05F33627413B7200EBDBB1 /* CGSize+Helpers.swift */,
+				7D733896274144A9004D7E59 /* BinaryFloatingPoint+Helpers.swift */,
+				7D733894274144A9004D7E59 /* CGPoint+Helpers.swift */,
+				7D733893274144A9004D7E59 /* CGRect+Helpers.swift */,
+				7D733895274144A9004D7E59 /* CGSize+Helpers.swift */,
+				7D733897274144A9004D7E59 /* ScreenScale+Helpers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -222,6 +231,7 @@
 					};
 					7D05F329274139E100EBDBB1 = {
 						CreatedOnToolsVersion = 12.5.1;
+						LastSwiftMigration = 1250;
 					};
 				};
 			};
@@ -273,8 +283,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D05F33727413B7200EBDBB1 /* CGSize+Helpers.swift in Sources */,
-				7D05F33927413B8100EBDBB1 /* ScreenScale+Helpers.swift in Sources */,
+				7D733899274144A9004D7E59 /* CGPoint+Helpers.swift in Sources */,
+				7D733898274144A9004D7E59 /* CGRect+Helpers.swift in Sources */,
+				7D73389A274144A9004D7E59 /* CGSize+Helpers.swift in Sources */,
+				7D73389B274144A9004D7E59 /* BinaryFloatingPoint+Helpers.swift in Sources */,
+				7D73389C274144A9004D7E59 /* ScreenScale+Helpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,10 +470,17 @@
 		7D05F32F274139E100EBDBB1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -469,7 +489,13 @@
 		7D05F330274139E100EBDBB1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
