@@ -1,6 +1,6 @@
 //
 //  ScreenScale+Helpers.swift
-//  Joom
+//  BottomSheet
 //
 //  Created by Mikhail Maslo on 08.12.2019.
 //  Copyright © 2021 Joom. All rights reserved.

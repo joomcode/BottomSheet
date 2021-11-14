@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension BottomSheetPresentationController {
+public extension BottomSheetPresentationController {
     final class PullBar: UIView {
         enum Style {
             static let size = CGSize(width: 40, height: 4)
@@ -38,7 +38,7 @@ extension BottomSheetPresentationController {
             addSubview(centerView)
         }
 
-        override func layoutSubviews() {
+        public override func layoutSubviews() {
             super.layoutSubviews()
 
             centerView.center = bounds.center

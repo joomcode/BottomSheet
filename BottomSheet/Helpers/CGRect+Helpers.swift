@@ -6,7 +6,7 @@
 //  Copyright © 2021 Joom. All rights reserved.
 //
 
-import UIKit
+import CoreGraphics
 
 public extension CGRect {
     // MARK: - Properties
