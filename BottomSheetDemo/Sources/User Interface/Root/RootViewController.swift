@@ -7,8 +7,16 @@
 //
 
 import UIKit
+import SnapKit
 
 final class RootViewController: UIViewController {
+    private let button: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .blue
+        button.setTitle("Show BottomSheet", for: .normal)
+        return button
+    }()
+
     init() {
         super.init(nibName: nil, bundle: nil)
     }
@@ -25,5 +33,17 @@ final class RootViewController: UIViewController {
     
     private func setupSubviews() {
         view.backgroundColor = .red
+        
+        button.addTarget(self, action: #selector(handleShowBottomSheet), for: .touchUpInside)
+        button.snp.makeConstraints {
+            $0.center.equalToSuperview()
+            $0.width.equalTo(200)
+            $0.height.equalTo(44)
+        }
+    }
+    
+    @objc
+    private func handleShowBottomSheet() {
+        // TODO: Implement
     }
 }
