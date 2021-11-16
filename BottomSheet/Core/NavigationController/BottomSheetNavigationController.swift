@@ -53,6 +53,16 @@ public final class BottomSheetNavigationController: UINavigationController {
 
         return viewController
     }
+    
+    public override func popToRootViewController(animated: Bool) -> [UIViewController]? {
+        var viewControllers: [UIViewController]?
+
+        updateNavigationStack(animated: animated) {
+            viewControllers = super.popToRootViewController(animated: animated)
+        }
+
+        return viewControllers
+    }
 
     public override func preferredContentSizeDidChange(forChildContentContainer container: UIContentContainer) {
         guard
