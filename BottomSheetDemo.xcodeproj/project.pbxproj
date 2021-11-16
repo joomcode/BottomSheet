@@ -29,6 +29,7 @@
 		7D7338D2274198DC004D7E59 /* UIScrollView+MulticastDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7338D1274198DC004D7E59 /* UIScrollView+MulticastDelegate.swift */; };
 		7D7338D4274269A3004D7E59 /* ResizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7338D3274269A3004D7E59 /* ResizeViewController.swift */; };
 		7DA9B01A27439FA100284B0F /* UIControl+EventHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA9B01927439FA100284B0F /* UIControl+EventHandling.swift */; };
+		7DA9B01D2743A11000284B0F /* UIViewController+Lifecycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA9B01C2743A11000284B0F /* UIViewController+Lifecycle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		7D7338D1274198DC004D7E59 /* UIScrollView+MulticastDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+MulticastDelegate.swift"; sourceTree = "<group>"; };
 		7D7338D3274269A3004D7E59 /* ResizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizeViewController.swift; sourceTree = "<group>"; };
 		7DA9B01927439FA100284B0F /* UIControl+EventHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+EventHandling.swift"; sourceTree = "<group>"; };
+		7DA9B01C2743A11000284B0F /* UIViewController+Lifecycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Lifecycle.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +236,7 @@
 				7D733893274144A9004D7E59 /* CGRect+Helpers.swift */,
 				7D733895274144A9004D7E59 /* CGSize+Helpers.swift */,
 				7D733897274144A9004D7E59 /* ScreenScale+Helpers.swift */,
+				7DA9B01C2743A11000284B0F /* UIViewController+Lifecycle.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -391,6 +394,7 @@
 				7D7338AC27414B8A004D7E59 /* UIViewController+CustomInteractiveTransition.swift in Sources */,
 				7D7338D2274198DC004D7E59 /* UIScrollView+MulticastDelegate.swift in Sources */,
 				7D7338A027414517004D7E59 /* BottomSheetPresentationController.swift in Sources */,
+				7DA9B01D2743A11000284B0F /* UIViewController+Lifecycle.swift in Sources */,
 				7D73389A274144A9004D7E59 /* CGSize+Helpers.swift in Sources */,
 				7D73389B274144A9004D7E59 /* BinaryFloatingPoint+Helpers.swift in Sources */,
 				7D7338B127414DBF004D7E59 /* BottomSheetTransitioningDelegate.swift in Sources */,

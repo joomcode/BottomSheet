@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import BottomSheet
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
         setupWindow()
+        invokeLoad()
         
         return true
     }
@@ -25,5 +27,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = RootViewController()
         window?.makeKeyAndVisible()
+    }
+    
+    private func invokeLoad() {
+        UIViewController.swiftLoad()
     }
 }

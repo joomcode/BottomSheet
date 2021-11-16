@@ -36,25 +36,20 @@ public extension UIViewController {
 
     func setupCustomInteractivePopTransition() {
         let gestureRecognizer = UIScreenEdgePanGestureRecognizer()
+        // TODO: Consider RTL
+        gestureRecognizer.edges = .left
         let gestureRecognizerDelegate = GestureRecognizerDelegate(navigationItem: navigationItem)
         gestureRecognizer.delegate = gestureRecognizerDelegate
 
-//        let updateEdges: (UIWindow) -> Void = { window in
-//            // TODO: Consider RTL
-//            gestureRecognizer.edges = .left
-//        }
+        if let view = viewIfLoaded {
+            view.addGestureRecognizer(gestureRecognizer)
+        } else {
+            subscribe(onEvent: .viewDidLoad) { [unowned self] in
+                view.addGestureRecognizer(gestureRecognizer)
+            }
+        }
 
-        // TODO: Subscribe on viewDidLoad if isViewLoaded == false
-        view.addGestureRecognizer(gestureRecognizer)
-
-//        if let window = view.window {
-//            updateEdges(window)
-//        }
-
-        // TODO: handle move to window
         gestureRecognizer.addTarget(self, action: #selector(handleGestureRecognizer))
-        gestureRecognizer.edges = .left
-
         customInteractivePopGestureRecognizer = gestureRecognizer
         objc_setAssociatedObject(self, &Self.gestureRecognizerDelegateKey, gestureRecognizerDelegate, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
     }
