@@ -28,6 +28,7 @@
 		7D7338D027417D50004D7E59 /* UINavigationController+MulticastDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7338CF27417D50004D7E59 /* UINavigationController+MulticastDelegate.swift */; };
 		7D7338D2274198DC004D7E59 /* UIScrollView+MulticastDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7338D1274198DC004D7E59 /* UIScrollView+MulticastDelegate.swift */; };
 		7D7338D4274269A3004D7E59 /* ResizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7338D3274269A3004D7E59 /* ResizeViewController.swift */; };
+		7DA9B01A27439FA100284B0F /* UIControl+EventHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA9B01927439FA100284B0F /* UIControl+EventHandling.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		7D7338CF27417D50004D7E59 /* UINavigationController+MulticastDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+MulticastDelegate.swift"; sourceTree = "<group>"; };
 		7D7338D1274198DC004D7E59 /* UIScrollView+MulticastDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+MulticastDelegate.swift"; sourceTree = "<group>"; };
 		7D7338D3274269A3004D7E59 /* ResizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizeViewController.swift; sourceTree = "<group>"; };
+		7DA9B01927439FA100284B0F /* UIControl+EventHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+EventHandling.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,8 +157,8 @@
 		7D05F31B2741363900EBDBB1 /* User Interface */ = {
 			isa = PBXGroup;
 			children = (
-				7D7338D5274269DF004D7E59 /* Resize */,
-				7D05F31C2741364500EBDBB1 /* Root */,
+				7DA9B01827439F8A00284B0F /* Helpers */,
+				7DA9B01727439F8400284B0F /* Screens */,
 			);
 			path = "User Interface";
 			sourceTree = "<group>";
@@ -251,6 +253,23 @@
 				7D7338D3274269A3004D7E59 /* ResizeViewController.swift */,
 			);
 			path = Resize;
+			sourceTree = "<group>";
+		};
+		7DA9B01727439F8400284B0F /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				7D7338D5274269DF004D7E59 /* Resize */,
+				7D05F31C2741364500EBDBB1 /* Root */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		7DA9B01827439F8A00284B0F /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				7DA9B01927439FA100284B0F /* UIControl+EventHandling.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -353,6 +372,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D05F3052741359800EBDBB1 /* AppDelegate.swift in Sources */,
+				7DA9B01A27439FA100284B0F /* UIControl+EventHandling.swift in Sources */,
 				7D05F3242741371400EBDBB1 /* RootViewController.swift in Sources */,
 				7D7338D4274269A3004D7E59 /* ResizeViewController.swift in Sources */,
 			);
