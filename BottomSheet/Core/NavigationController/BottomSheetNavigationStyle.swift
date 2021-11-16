@@ -99,7 +99,11 @@ public final class BottomSheetNavigationAnimatedTransitioning: NSObject, UIViewC
             )
         )
         let separatorView = UIView(frame: separatorFrame)
-        separatorView.backgroundColor = UIColor.black
+        if #available(iOS 13.0, *) {
+            separatorView.backgroundColor = .separator
+        } else {
+            separatorView.backgroundColor = .lightGray
+        }
         containerView.addSubview(separatorView)
 
         let animations = {

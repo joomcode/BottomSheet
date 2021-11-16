@@ -23,10 +23,11 @@
 		7D7338A3274145A4004D7E59 /* BottomSheetModalDismissalHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7338A2274145A4004D7E59 /* BottomSheetModalDismissalHandler.swift */; };
 		7D7338AB27414B8A004D7E59 /* BottomSheetNavigationStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7338A827414B57004D7E59 /* BottomSheetNavigationStyle.swift */; };
 		7D7338AC27414B8A004D7E59 /* UIViewController+CustomInteractiveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7338A627414B57004D7E59 /* UIViewController+CustomInteractiveTransition.swift */; };
-		7D7338AD27414B8A004D7E59 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7338A727414B57004D7E59 /* NavigationController.swift */; };
+		7D7338AD27414B8A004D7E59 /* BottomSheetNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7338A727414B57004D7E59 /* BottomSheetNavigationController.swift */; };
 		7D7338B127414DBF004D7E59 /* BottomSheetTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7338B027414DBE004D7E59 /* BottomSheetTransitioningDelegate.swift */; };
 		7D7338D027417D50004D7E59 /* UINavigationController+MulticastDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7338CF27417D50004D7E59 /* UINavigationController+MulticastDelegate.swift */; };
 		7D7338D2274198DC004D7E59 /* UIScrollView+MulticastDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7338D1274198DC004D7E59 /* UIScrollView+MulticastDelegate.swift */; };
+		7D7338D4274269A3004D7E59 /* ResizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7338D3274269A3004D7E59 /* ResizeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,11 +69,12 @@
 		7D73389F27414517004D7E59 /* BottomSheetNavigationPullBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomSheetNavigationPullBar.swift; sourceTree = "<group>"; };
 		7D7338A2274145A4004D7E59 /* BottomSheetModalDismissalHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetModalDismissalHandler.swift; sourceTree = "<group>"; };
 		7D7338A627414B57004D7E59 /* UIViewController+CustomInteractiveTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+CustomInteractiveTransition.swift"; sourceTree = "<group>"; };
-		7D7338A727414B57004D7E59 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		7D7338A727414B57004D7E59 /* BottomSheetNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetNavigationController.swift; sourceTree = "<group>"; };
 		7D7338A827414B57004D7E59 /* BottomSheetNavigationStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetNavigationStyle.swift; sourceTree = "<group>"; };
 		7D7338B027414DBE004D7E59 /* BottomSheetTransitioningDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetTransitioningDelegate.swift; sourceTree = "<group>"; };
 		7D7338CF27417D50004D7E59 /* UINavigationController+MulticastDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+MulticastDelegate.swift"; sourceTree = "<group>"; };
 		7D7338D1274198DC004D7E59 /* UIScrollView+MulticastDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+MulticastDelegate.swift"; sourceTree = "<group>"; };
+		7D7338D3274269A3004D7E59 /* ResizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 		7D05F31B2741363900EBDBB1 /* User Interface */ = {
 			isa = PBXGroup;
 			children = (
+				7D7338D5274269DF004D7E59 /* Resize */,
 				7D05F31C2741364500EBDBB1 /* Root */,
 			);
 			path = "User Interface";
@@ -215,7 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				7D7338A827414B57004D7E59 /* BottomSheetNavigationStyle.swift */,
-				7D7338A727414B57004D7E59 /* NavigationController.swift */,
+				7D7338A727414B57004D7E59 /* BottomSheetNavigationController.swift */,
 				7D7338A627414B57004D7E59 /* UIViewController+CustomInteractiveTransition.swift */,
 			);
 			path = NavigationController;
@@ -240,6 +243,14 @@
 				7D7338CF27417D50004D7E59 /* UINavigationController+MulticastDelegate.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		7D7338D5274269DF004D7E59 /* Resize */ = {
+			isa = PBXGroup;
+			children = (
+				7D7338D3274269A3004D7E59 /* ResizeViewController.swift */,
+			);
+			path = Resize;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -343,6 +354,7 @@
 			files = (
 				7D05F3052741359800EBDBB1 /* AppDelegate.swift in Sources */,
 				7D05F3242741371400EBDBB1 /* RootViewController.swift in Sources */,
+				7D7338D4274269A3004D7E59 /* ResizeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,7 +362,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D7338AD27414B8A004D7E59 /* NavigationController.swift in Sources */,
+				7D7338AD27414B8A004D7E59 /* BottomSheetNavigationController.swift in Sources */,
 				7D733899274144A9004D7E59 /* CGPoint+Helpers.swift in Sources */,
 				7D733898274144A9004D7E59 /* CGRect+Helpers.swift in Sources */,
 				7D7338AB27414B8A004D7E59 /* BottomSheetNavigationStyle.swift in Sources */,
@@ -440,7 +452,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -495,7 +507,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
