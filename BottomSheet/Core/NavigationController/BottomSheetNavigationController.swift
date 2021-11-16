@@ -1,5 +1,5 @@
 //
-//  NavigationController.swift
+//  BottomSheetNavigationController.swift
 //  BottomSheet
 //
 //  Created by Mikhail Maslo on 08.11.2021.
