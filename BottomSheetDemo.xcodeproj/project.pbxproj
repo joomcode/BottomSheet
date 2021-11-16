@@ -25,6 +25,8 @@
 		7D7338AC27414B8A004D7E59 /* UIViewController+CustomInteractiveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7338A627414B57004D7E59 /* UIViewController+CustomInteractiveTransition.swift */; };
 		7D7338AD27414B8A004D7E59 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7338A727414B57004D7E59 /* NavigationController.swift */; };
 		7D7338B127414DBF004D7E59 /* BottomSheetTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7338B027414DBE004D7E59 /* BottomSheetTransitioningDelegate.swift */; };
+		7D7338D027417D50004D7E59 /* UINavigationController+MulticastDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7338CF27417D50004D7E59 /* UINavigationController+MulticastDelegate.swift */; };
+		7D7338D2274198DC004D7E59 /* UIScrollView+MulticastDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7338D1274198DC004D7E59 /* UIScrollView+MulticastDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		7D7338A727414B57004D7E59 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		7D7338A827414B57004D7E59 /* BottomSheetNavigationStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetNavigationStyle.swift; sourceTree = "<group>"; };
 		7D7338B027414DBE004D7E59 /* BottomSheetTransitioningDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetTransitioningDelegate.swift; sourceTree = "<group>"; };
+		7D7338CF27417D50004D7E59 /* UINavigationController+MulticastDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+MulticastDelegate.swift"; sourceTree = "<group>"; };
+		7D7338D1274198DC004D7E59 /* UIScrollView+MulticastDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+MulticastDelegate.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,11 +185,8 @@
 		7D05F33527413B6000EBDBB1 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				7D733896274144A9004D7E59 /* BinaryFloatingPoint+Helpers.swift */,
-				7D733894274144A9004D7E59 /* CGPoint+Helpers.swift */,
-				7D733893274144A9004D7E59 /* CGRect+Helpers.swift */,
-				7D733895274144A9004D7E59 /* CGSize+Helpers.swift */,
-				7D733897274144A9004D7E59 /* ScreenScale+Helpers.swift */,
+				7D7338CC2741761F004D7E59 /* Utils */,
+				7D7338CB27417610004D7E59 /* UI */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -218,6 +219,27 @@
 				7D7338A627414B57004D7E59 /* UIViewController+CustomInteractiveTransition.swift */,
 			);
 			path = NavigationController;
+			sourceTree = "<group>";
+		};
+		7D7338CB27417610004D7E59 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				7D733896274144A9004D7E59 /* BinaryFloatingPoint+Helpers.swift */,
+				7D733894274144A9004D7E59 /* CGPoint+Helpers.swift */,
+				7D733893274144A9004D7E59 /* CGRect+Helpers.swift */,
+				7D733895274144A9004D7E59 /* CGSize+Helpers.swift */,
+				7D733897274144A9004D7E59 /* ScreenScale+Helpers.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		7D7338CC2741761F004D7E59 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				7D7338D1274198DC004D7E59 /* UIScrollView+MulticastDelegate.swift */,
+				7D7338CF27417D50004D7E59 /* UINavigationController+MulticastDelegate.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -335,11 +357,13 @@
 				7D7338A127414517004D7E59 /* BottomSheetNavigationPullBar.swift in Sources */,
 				7D7338A3274145A4004D7E59 /* BottomSheetModalDismissalHandler.swift in Sources */,
 				7D7338AC27414B8A004D7E59 /* UIViewController+CustomInteractiveTransition.swift in Sources */,
+				7D7338D2274198DC004D7E59 /* UIScrollView+MulticastDelegate.swift in Sources */,
 				7D7338A027414517004D7E59 /* BottomSheetPresentationController.swift in Sources */,
 				7D73389A274144A9004D7E59 /* CGSize+Helpers.swift in Sources */,
 				7D73389B274144A9004D7E59 /* BinaryFloatingPoint+Helpers.swift in Sources */,
 				7D7338B127414DBF004D7E59 /* BottomSheetTransitioningDelegate.swift in Sources */,
 				7D73389C274144A9004D7E59 /* ScreenScale+Helpers.swift in Sources */,
+				7D7338D027417D50004D7E59 /* UINavigationController+MulticastDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -108,7 +108,7 @@ public final class BottomSheetPresentationController: UIPresentationController {
 
     private func setupScrollTrackingIfNeeded() {
         if let navigationController = presentedViewController as? UINavigationController {
-            navigationController.delegate = self
+            navigationController.multicastingDelegate.addDelegate(self)
 
             if let topViewController = navigationController.topViewController {
                 trackScrollView(inside: topViewController)
@@ -119,7 +119,7 @@ public final class BottomSheetPresentationController: UIPresentationController {
     }
 
     private func removeScrollTrackingIfNeeded() {
-        trackedScrollView?.delegate = nil
+        trackedScrollView?.multicastingDelegate.removeDelegate(self)
         trackedScrollView = nil
     }
 
@@ -505,8 +505,8 @@ extension BottomSheetPresentationController: UINavigationControllerDelegate {
             return
         }
         
-        trackedScrollView?.delegate = nil
-        scrollView.delegate = self
+        trackedScrollView?.multicastingDelegate.removeDelegate(self)
+        scrollView.multicastingDelegate.addDelegate(self)
         self.trackedScrollView = scrollView
     }
 }
