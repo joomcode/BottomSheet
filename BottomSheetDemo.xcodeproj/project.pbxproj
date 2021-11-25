@@ -13,24 +13,24 @@
 		7D05F3242741371400EBDBB1 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D05F3232741371400EBDBB1 /* RootViewController.swift */; };
 		7D05F33227413A1500EBDBB1 /* libBottomSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D05F32A274139E100EBDBB1 /* libBottomSheet.a */; };
 		7D05F342274140F700EBDBB1 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7D05F341274140F700EBDBB1 /* SnapKit */; };
-		7D733898274144A9004D7E59 /* CGRect+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D733893274144A9004D7E59 /* CGRect+Helpers.swift */; };
-		7D733899274144A9004D7E59 /* CGPoint+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D733894274144A9004D7E59 /* CGPoint+Helpers.swift */; };
-		7D73389A274144A9004D7E59 /* CGSize+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D733895274144A9004D7E59 /* CGSize+Helpers.swift */; };
-		7D73389B274144A9004D7E59 /* BinaryFloatingPoint+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D733896274144A9004D7E59 /* BinaryFloatingPoint+Helpers.swift */; };
-		7D73389C274144A9004D7E59 /* ScreenScale+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D733897274144A9004D7E59 /* ScreenScale+Helpers.swift */; };
-		7D7338A027414517004D7E59 /* BottomSheetPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D73389E27414517004D7E59 /* BottomSheetPresentationController.swift */; };
-		7D7338A127414517004D7E59 /* BottomSheetNavigationPullBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D73389F27414517004D7E59 /* BottomSheetNavigationPullBar.swift */; };
-		7D7338A3274145A4004D7E59 /* BottomSheetModalDismissalHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7338A2274145A4004D7E59 /* BottomSheetModalDismissalHandler.swift */; };
-		7D7338AB27414B8A004D7E59 /* BottomSheetNavigationStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7338A827414B57004D7E59 /* BottomSheetNavigationStyle.swift */; };
-		7D7338AC27414B8A004D7E59 /* UIViewController+CustomInteractiveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7338A627414B57004D7E59 /* UIViewController+CustomInteractiveTransition.swift */; };
-		7D7338AD27414B8A004D7E59 /* BottomSheetNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7338A727414B57004D7E59 /* BottomSheetNavigationController.swift */; };
-		7D7338B127414DBF004D7E59 /* BottomSheetTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7338B027414DBE004D7E59 /* BottomSheetTransitioningDelegate.swift */; };
-		7D7338D027417D50004D7E59 /* UINavigationController+MulticastDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7338CF27417D50004D7E59 /* UINavigationController+MulticastDelegate.swift */; };
-		7D7338D2274198DC004D7E59 /* UIScrollView+MulticastDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7338D1274198DC004D7E59 /* UIScrollView+MulticastDelegate.swift */; };
 		7D7338D4274269A3004D7E59 /* ResizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7338D3274269A3004D7E59 /* ResizeViewController.swift */; };
-		7D8D53E4274F8B790051FD9C /* UIEdgeInsets+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8D53E3274F8B790051FD9C /* UIEdgeInsets+Helpers.swift */; };
+		7DA6E0D9274F9186009F5C37 /* BottomSheetTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA6E0B4274F915A009F5C37 /* BottomSheetTransitioningDelegate.swift */; };
+		7DA6E0DA274F918A009F5C37 /* BottomSheetNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA6E0B6274F915A009F5C37 /* BottomSheetNavigationController.swift */; };
+		7DA6E0DB274F918A009F5C37 /* UIViewController+CustomInteractiveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA6E0B7274F915A009F5C37 /* UIViewController+CustomInteractiveTransition.swift */; };
+		7DA6E0DC274F918A009F5C37 /* BottomSheetNavigationStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA6E0B8274F915A009F5C37 /* BottomSheetNavigationStyle.swift */; };
+		7DA6E0DD274F918E009F5C37 /* BottomSheetNavigationPullBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA6E0BB274F915A009F5C37 /* BottomSheetNavigationPullBar.swift */; };
+		7DA6E0DE274F918E009F5C37 /* BottomSheetModalDismissalHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA6E0BC274F915A009F5C37 /* BottomSheetModalDismissalHandler.swift */; };
+		7DA6E0DF274F918E009F5C37 /* BottomSheetPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA6E0BA274F915A009F5C37 /* BottomSheetPresentationController.swift */; };
+		7DA6E0E0274F9196009F5C37 /* BinaryFloatingPoint+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA6E0C2274F915A009F5C37 /* BinaryFloatingPoint+Helpers.swift */; };
+		7DA6E0E1274F9196009F5C37 /* ScreenScale+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA6E0BF274F915A009F5C37 /* ScreenScale+Helpers.swift */; };
+		7DA6E0E2274F9196009F5C37 /* UIViewController+Lifecycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA6E0C3274F915A009F5C37 /* UIViewController+Lifecycle.swift */; };
+		7DA6E0E3274F9196009F5C37 /* CGRect+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA6E0C4274F915A009F5C37 /* CGRect+Helpers.swift */; };
+		7DA6E0E4274F9196009F5C37 /* UIEdgeInsets+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA6E0C0274F915A009F5C37 /* UIEdgeInsets+Helpers.swift */; };
+		7DA6E0E5274F9196009F5C37 /* CGPoint+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA6E0C1274F915A009F5C37 /* CGPoint+Helpers.swift */; };
+		7DA6E0E6274F9196009F5C37 /* CGSize+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA6E0C5274F915A009F5C37 /* CGSize+Helpers.swift */; };
+		7DA6E0E7274F919A009F5C37 /* UIScrollView+MulticastDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA6E0C8274F915A009F5C37 /* UIScrollView+MulticastDelegate.swift */; };
+		7DA6E0E8274F919A009F5C37 /* UINavigationController+MulticastDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA6E0C7274F915A009F5C37 /* UINavigationController+MulticastDelegate.swift */; };
 		7DA9B01A27439FA100284B0F /* UIControl+EventHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA9B01927439FA100284B0F /* UIControl+EventHandling.swift */; };
-		7DA9B01D2743A11000284B0F /* UIViewController+Lifecycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA9B01C2743A11000284B0F /* UIViewController+Lifecycle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,24 +63,24 @@
 		7D05F3122741359C00EBDBB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7D05F3232741371400EBDBB1 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		7D05F32A274139E100EBDBB1 /* libBottomSheet.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBottomSheet.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		7D733893274144A9004D7E59 /* CGRect+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+Helpers.swift"; sourceTree = "<group>"; };
-		7D733894274144A9004D7E59 /* CGPoint+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+Helpers.swift"; sourceTree = "<group>"; };
-		7D733895274144A9004D7E59 /* CGSize+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGSize+Helpers.swift"; sourceTree = "<group>"; };
-		7D733896274144A9004D7E59 /* BinaryFloatingPoint+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BinaryFloatingPoint+Helpers.swift"; sourceTree = "<group>"; };
-		7D733897274144A9004D7E59 /* ScreenScale+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ScreenScale+Helpers.swift"; sourceTree = "<group>"; };
-		7D73389E27414517004D7E59 /* BottomSheetPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomSheetPresentationController.swift; sourceTree = "<group>"; };
-		7D73389F27414517004D7E59 /* BottomSheetNavigationPullBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomSheetNavigationPullBar.swift; sourceTree = "<group>"; };
-		7D7338A2274145A4004D7E59 /* BottomSheetModalDismissalHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetModalDismissalHandler.swift; sourceTree = "<group>"; };
-		7D7338A627414B57004D7E59 /* UIViewController+CustomInteractiveTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+CustomInteractiveTransition.swift"; sourceTree = "<group>"; };
-		7D7338A727414B57004D7E59 /* BottomSheetNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetNavigationController.swift; sourceTree = "<group>"; };
-		7D7338A827414B57004D7E59 /* BottomSheetNavigationStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetNavigationStyle.swift; sourceTree = "<group>"; };
-		7D7338B027414DBE004D7E59 /* BottomSheetTransitioningDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetTransitioningDelegate.swift; sourceTree = "<group>"; };
-		7D7338CF27417D50004D7E59 /* UINavigationController+MulticastDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+MulticastDelegate.swift"; sourceTree = "<group>"; };
-		7D7338D1274198DC004D7E59 /* UIScrollView+MulticastDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+MulticastDelegate.swift"; sourceTree = "<group>"; };
 		7D7338D3274269A3004D7E59 /* ResizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizeViewController.swift; sourceTree = "<group>"; };
-		7D8D53E3274F8B790051FD9C /* UIEdgeInsets+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIEdgeInsets+Helpers.swift"; sourceTree = "<group>"; };
+		7DA6E0B4274F915A009F5C37 /* BottomSheetTransitioningDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomSheetTransitioningDelegate.swift; sourceTree = "<group>"; };
+		7DA6E0B6274F915A009F5C37 /* BottomSheetNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomSheetNavigationController.swift; sourceTree = "<group>"; };
+		7DA6E0B7274F915A009F5C37 /* UIViewController+CustomInteractiveTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+CustomInteractiveTransition.swift"; sourceTree = "<group>"; };
+		7DA6E0B8274F915A009F5C37 /* BottomSheetNavigationStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomSheetNavigationStyle.swift; sourceTree = "<group>"; };
+		7DA6E0BA274F915A009F5C37 /* BottomSheetPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomSheetPresentationController.swift; sourceTree = "<group>"; };
+		7DA6E0BB274F915A009F5C37 /* BottomSheetNavigationPullBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomSheetNavigationPullBar.swift; sourceTree = "<group>"; };
+		7DA6E0BC274F915A009F5C37 /* BottomSheetModalDismissalHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomSheetModalDismissalHandler.swift; sourceTree = "<group>"; };
+		7DA6E0BF274F915A009F5C37 /* ScreenScale+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ScreenScale+Helpers.swift"; sourceTree = "<group>"; };
+		7DA6E0C0274F915A009F5C37 /* UIEdgeInsets+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIEdgeInsets+Helpers.swift"; sourceTree = "<group>"; };
+		7DA6E0C1274F915A009F5C37 /* CGPoint+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+Helpers.swift"; sourceTree = "<group>"; };
+		7DA6E0C2274F915A009F5C37 /* BinaryFloatingPoint+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BinaryFloatingPoint+Helpers.swift"; sourceTree = "<group>"; };
+		7DA6E0C3274F915A009F5C37 /* UIViewController+Lifecycle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Lifecycle.swift"; sourceTree = "<group>"; };
+		7DA6E0C4274F915A009F5C37 /* CGRect+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+Helpers.swift"; sourceTree = "<group>"; };
+		7DA6E0C5274F915A009F5C37 /* CGSize+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGSize+Helpers.swift"; sourceTree = "<group>"; };
+		7DA6E0C7274F915A009F5C37 /* UINavigationController+MulticastDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationController+MulticastDelegate.swift"; sourceTree = "<group>"; };
+		7DA6E0C8274F915A009F5C37 /* UIScrollView+MulticastDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+MulticastDelegate.swift"; sourceTree = "<group>"; };
 		7DA9B01927439FA100284B0F /* UIControl+EventHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+EventHandling.swift"; sourceTree = "<group>"; };
-		7DA9B01C2743A11000284B0F /* UIViewController+Lifecycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Lifecycle.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,10 +106,10 @@
 		7D05F2F82741359800EBDBB1 = {
 			isa = PBXGroup;
 			children = (
+				7DA6E0B2274F915A009F5C37 /* BottomSheet */,
 				7D05F3032741359800EBDBB1 /* BottomSheetDemo */,
-				7D05F32B274139E100EBDBB1 /* BottomSheet */,
-				7D05F3022741359800EBDBB1 /* Products */,
 				7D05F33127413A1500EBDBB1 /* Frameworks */,
+				7D05F3022741359800EBDBB1 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -175,82 +175,11 @@
 			path = Root;
 			sourceTree = "<group>";
 		};
-		7D05F32B274139E100EBDBB1 /* BottomSheet */ = {
-			isa = PBXGroup;
-			children = (
-				7D73389D27414517004D7E59 /* Core */,
-				7D05F33527413B6000EBDBB1 /* Helpers */,
-			);
-			path = BottomSheet;
-			sourceTree = "<group>";
-		};
 		7D05F33127413A1500EBDBB1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		7D05F33527413B6000EBDBB1 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				7D7338CC2741761F004D7E59 /* Utils */,
-				7D7338CB27417610004D7E59 /* UI */,
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
-		7D73389D27414517004D7E59 /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				7D7338AA27414B6D004D7E59 /* NavigationController */,
-				7D7338A927414B63004D7E59 /* Presentation */,
-				7D7338B027414DBE004D7E59 /* BottomSheetTransitioningDelegate.swift */,
-			);
-			path = Core;
-			sourceTree = "<group>";
-		};
-		7D7338A927414B63004D7E59 /* Presentation */ = {
-			isa = PBXGroup;
-			children = (
-				7D73389E27414517004D7E59 /* BottomSheetPresentationController.swift */,
-				7D73389F27414517004D7E59 /* BottomSheetNavigationPullBar.swift */,
-				7D7338A2274145A4004D7E59 /* BottomSheetModalDismissalHandler.swift */,
-			);
-			path = Presentation;
-			sourceTree = "<group>";
-		};
-		7D7338AA27414B6D004D7E59 /* NavigationController */ = {
-			isa = PBXGroup;
-			children = (
-				7D7338A827414B57004D7E59 /* BottomSheetNavigationStyle.swift */,
-				7D7338A727414B57004D7E59 /* BottomSheetNavigationController.swift */,
-				7D7338A627414B57004D7E59 /* UIViewController+CustomInteractiveTransition.swift */,
-			);
-			path = NavigationController;
-			sourceTree = "<group>";
-		};
-		7D7338CB27417610004D7E59 /* UI */ = {
-			isa = PBXGroup;
-			children = (
-				7D733896274144A9004D7E59 /* BinaryFloatingPoint+Helpers.swift */,
-				7D733894274144A9004D7E59 /* CGPoint+Helpers.swift */,
-				7D733893274144A9004D7E59 /* CGRect+Helpers.swift */,
-				7D733895274144A9004D7E59 /* CGSize+Helpers.swift */,
-				7D733897274144A9004D7E59 /* ScreenScale+Helpers.swift */,
-				7DA9B01C2743A11000284B0F /* UIViewController+Lifecycle.swift */,
-				7D8D53E3274F8B790051FD9C /* UIEdgeInsets+Helpers.swift */,
-			);
-			path = UI;
-			sourceTree = "<group>";
-		};
-		7D7338CC2741761F004D7E59 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				7D7338D1274198DC004D7E59 /* UIScrollView+MulticastDelegate.swift */,
-				7D7338CF27417D50004D7E59 /* UINavigationController+MulticastDelegate.swift */,
-			);
-			path = Utils;
 			sourceTree = "<group>";
 		};
 		7D7338D5274269DF004D7E59 /* Resize */ = {
@@ -259,6 +188,78 @@
 				7D7338D3274269A3004D7E59 /* ResizeViewController.swift */,
 			);
 			path = Resize;
+			sourceTree = "<group>";
+		};
+		7DA6E0B2274F915A009F5C37 /* BottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				7DA6E0B3274F915A009F5C37 /* Core */,
+				7DA6E0BD274F915A009F5C37 /* Helpers */,
+			);
+			name = BottomSheet;
+			path = Sources/BottomSheet;
+			sourceTree = "<group>";
+		};
+		7DA6E0B3274F915A009F5C37 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				7DA6E0B4274F915A009F5C37 /* BottomSheetTransitioningDelegate.swift */,
+				7DA6E0B5274F915A009F5C37 /* NavigationController */,
+				7DA6E0B9274F915A009F5C37 /* Presentation */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		7DA6E0B5274F915A009F5C37 /* NavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				7DA6E0B6274F915A009F5C37 /* BottomSheetNavigationController.swift */,
+				7DA6E0B7274F915A009F5C37 /* UIViewController+CustomInteractiveTransition.swift */,
+				7DA6E0B8274F915A009F5C37 /* BottomSheetNavigationStyle.swift */,
+			);
+			path = NavigationController;
+			sourceTree = "<group>";
+		};
+		7DA6E0B9274F915A009F5C37 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				7DA6E0BA274F915A009F5C37 /* BottomSheetPresentationController.swift */,
+				7DA6E0BB274F915A009F5C37 /* BottomSheetNavigationPullBar.swift */,
+				7DA6E0BC274F915A009F5C37 /* BottomSheetModalDismissalHandler.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		7DA6E0BD274F915A009F5C37 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				7DA6E0BE274F915A009F5C37 /* UI */,
+				7DA6E0C6274F915A009F5C37 /* Utils */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		7DA6E0BE274F915A009F5C37 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				7DA6E0BF274F915A009F5C37 /* ScreenScale+Helpers.swift */,
+				7DA6E0C0274F915A009F5C37 /* UIEdgeInsets+Helpers.swift */,
+				7DA6E0C1274F915A009F5C37 /* CGPoint+Helpers.swift */,
+				7DA6E0C2274F915A009F5C37 /* BinaryFloatingPoint+Helpers.swift */,
+				7DA6E0C3274F915A009F5C37 /* UIViewController+Lifecycle.swift */,
+				7DA6E0C4274F915A009F5C37 /* CGRect+Helpers.swift */,
+				7DA6E0C5274F915A009F5C37 /* CGSize+Helpers.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		7DA6E0C6274F915A009F5C37 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				7DA6E0C7274F915A009F5C37 /* UINavigationController+MulticastDelegate.swift */,
+				7DA6E0C8274F915A009F5C37 /* UIScrollView+MulticastDelegate.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		7DA9B01727439F8400284B0F /* Screens */ = {
@@ -388,22 +389,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D7338AD27414B8A004D7E59 /* BottomSheetNavigationController.swift in Sources */,
-				7D733899274144A9004D7E59 /* CGPoint+Helpers.swift in Sources */,
-				7D733898274144A9004D7E59 /* CGRect+Helpers.swift in Sources */,
-				7D7338AB27414B8A004D7E59 /* BottomSheetNavigationStyle.swift in Sources */,
-				7D7338A127414517004D7E59 /* BottomSheetNavigationPullBar.swift in Sources */,
-				7D8D53E4274F8B790051FD9C /* UIEdgeInsets+Helpers.swift in Sources */,
-				7D7338A3274145A4004D7E59 /* BottomSheetModalDismissalHandler.swift in Sources */,
-				7D7338AC27414B8A004D7E59 /* UIViewController+CustomInteractiveTransition.swift in Sources */,
-				7D7338D2274198DC004D7E59 /* UIScrollView+MulticastDelegate.swift in Sources */,
-				7D7338A027414517004D7E59 /* BottomSheetPresentationController.swift in Sources */,
-				7DA9B01D2743A11000284B0F /* UIViewController+Lifecycle.swift in Sources */,
-				7D73389A274144A9004D7E59 /* CGSize+Helpers.swift in Sources */,
-				7D73389B274144A9004D7E59 /* BinaryFloatingPoint+Helpers.swift in Sources */,
-				7D7338B127414DBF004D7E59 /* BottomSheetTransitioningDelegate.swift in Sources */,
-				7D73389C274144A9004D7E59 /* ScreenScale+Helpers.swift in Sources */,
-				7D7338D027417D50004D7E59 /* UINavigationController+MulticastDelegate.swift in Sources */,
+				7DA6E0E4274F9196009F5C37 /* UIEdgeInsets+Helpers.swift in Sources */,
+				7DA6E0E5274F9196009F5C37 /* CGPoint+Helpers.swift in Sources */,
+				7DA6E0E1274F9196009F5C37 /* ScreenScale+Helpers.swift in Sources */,
+				7DA6E0DD274F918E009F5C37 /* BottomSheetNavigationPullBar.swift in Sources */,
+				7DA6E0DE274F918E009F5C37 /* BottomSheetModalDismissalHandler.swift in Sources */,
+				7DA6E0DF274F918E009F5C37 /* BottomSheetPresentationController.swift in Sources */,
+				7DA6E0E7274F919A009F5C37 /* UIScrollView+MulticastDelegate.swift in Sources */,
+				7DA6E0E8274F919A009F5C37 /* UINavigationController+MulticastDelegate.swift in Sources */,
+				7DA6E0E6274F9196009F5C37 /* CGSize+Helpers.swift in Sources */,
+				7DA6E0E2274F9196009F5C37 /* UIViewController+Lifecycle.swift in Sources */,
+				7DA6E0DC274F918A009F5C37 /* BottomSheetNavigationStyle.swift in Sources */,
+				7DA6E0DA274F918A009F5C37 /* BottomSheetNavigationController.swift in Sources */,
+				7DA6E0D9274F9186009F5C37 /* BottomSheetTransitioningDelegate.swift in Sources */,
+				7DA6E0DB274F918A009F5C37 /* UIViewController+CustomInteractiveTransition.swift in Sources */,
+				7DA6E0E3274F9196009F5C37 /* CGRect+Helpers.swift in Sources */,
+				7DA6E0E0274F9196009F5C37 /* BinaryFloatingPoint+Helpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
