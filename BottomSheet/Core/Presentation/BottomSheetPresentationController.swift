@@ -62,10 +62,8 @@ public final class BottomSheetPresentationController: UIPresentationController {
 
     private var overlayTranslation: CGFloat = 0
     private var scrollViewTranslation: CGFloat = 0
-    private var lastContentOffsetWhileScrolling: CGPoint = .zero
     private var lastContentOffsetBeforeDragging: CGPoint = .zero
     private var didStartDragging = false
-    private var dismissalWasAborted = false
 
     private var interactionController: UIPercentDrivenInteractiveTransition?
 
@@ -251,7 +249,6 @@ public final class BottomSheetPresentationController: UIPresentationController {
             interactionController?.cancel()
         } else if !dismissalHandler.canBeDismissed {
             interactionController?.cancel()
-            dismissalWasAborted = true
         } else {
             interactionController?.finish()
         }
@@ -354,45 +351,35 @@ public final class BottomSheetPresentationController: UIPresentationController {
 
 extension BottomSheetPresentationController: UIScrollViewDelegate {
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        // We don't want bounces inside bottom sheet
         if
             !scrollView.isContentOriginInBounds,
-            scrollView.frame.height - scrollView.adjustedContentInset.top - scrollView.adjustedContentInset.bottom >= scrollView.contentSize.height
+            scrollView.contentSize.height.isAlmostEqual(to: scrollView.frame.height - scrollView.adjustedContentInset.verticalInsets)
         {
-            scrollView.contentOffset.y = -scrollView.adjustedContentInset.top
-            return
+            scrollView.bounds.origin.y = -scrollView.adjustedContentInset.top
         }
 
+        // We don't want bounces inside bottom sheet
         let previousTranslation = scrollViewTranslation
         scrollViewTranslation = scrollView.panGestureRecognizer.translation(in: scrollView).y
-
-        if lastContentOffsetWhileScrolling.y.isAlmostEqual(to: 0) {
-            lastContentOffsetWhileScrolling = scrollView.contentOffset
-        }
-
+        
         didStartDragging = shouldDragOverlay(following: scrollView)
         if didStartDragging {
             startInteractiveTransitionIfNeeded()
-            let offset = adjustedContentOffset(dragging: scrollView)
             overlayTranslation += scrollViewTranslation - previousTranslation
-
+            
             // Update scrollView contentInset without invoking scrollViewDidScroll(_:)
-            var bounds = scrollView.bounds
-            bounds.origin = offset
-            scrollView.bounds = bounds
-
+            scrollView.bounds.origin.y = -scrollView.adjustedContentInset.top
+            
             updateInteractionControllerProgress(verticalTranslation: overlayTranslation)
-            lastContentOffsetWhileScrolling = offset
         } else {
             lastContentOffsetBeforeDragging = scrollView.panGestureRecognizer.translation(in: scrollView)
-            lastContentOffsetWhileScrolling = scrollView.contentOffset
         }
     }
-
+    
     public func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         isDragging = true
     }
-
+    
     public func scrollViewWillEndDragging(
         _ scrollView: UIScrollView,
         withVelocity velocity: CGPoint,
@@ -408,10 +395,9 @@ extension BottomSheetPresentationController: UIScrollViewDelegate {
         } else {
             endInteractiveTransition(isCancelled: true)
         }
-
+        
         overlayTranslation = 0
         scrollViewTranslation = 0
-        lastContentOffsetWhileScrolling = .zero
         lastContentOffsetBeforeDragging = .zero
         didStartDragging = false
         isDragging = false
@@ -421,38 +407,24 @@ extension BottomSheetPresentationController: UIScrollViewDelegate {
         guard interactionController == nil else {
             return
         }
-
+        
         startInteractiveTransition()
     }
-
+    
     private func shouldDragOverlay(following scrollView: UIScrollView) -> Bool {
         guard scrollView.isTracking, isInteractiveTransitionCanBeHandled else {
             return false
         }
-
-        let velocity = scrollView.panGestureRecognizer.velocity(in: nil).y
-        let movesUp = velocity < 0
+        
         if let percentComplete = interactionController?.percentComplete {
-            // Swipe down
             if percentComplete.isAlmostEqual(to: 0) {
-                return scrollView.isContentOriginInBounds && !movesUp
+                return scrollView.isContentOriginInBounds && scrollView.scrollsDown
             }
-
-            return scrollView.isContentOriginInBounds || scrollView.scrollsUp
+            
+            return true
         } else {
-            return scrollView.isContentOriginInBounds && !movesUp
+            return scrollView.isContentOriginInBounds && scrollView.scrollsDown
         }
-    }
-
-    private func adjustedContentOffset(dragging scrollView: UIScrollView) -> CGPoint {
-        var contentOffset = lastContentOffsetWhileScrolling
-        let topInset = -scrollView.adjustedContentInset.top
-
-        if contentOffset.y < topInset {
-            contentOffset.y = topInset
-        }
-
-        return contentOffset
     }
 }
 
@@ -576,7 +548,11 @@ private extension UIScrollView {
     var scrollsUp: Bool {
         panGestureRecognizer.velocity(in: nil).y < 0
     }
-
+    
+    var scrollsDown: Bool {
+        !scrollsUp
+    }
+    
     var isContentOriginInBounds: Bool {
         contentOffset.y <= -adjustedContentInset.top
     }
