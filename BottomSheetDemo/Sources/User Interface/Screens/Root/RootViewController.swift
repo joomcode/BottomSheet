@@ -18,6 +18,8 @@ final class RootViewController: UIViewController {
         return button
     }()
     
+    private var bottomSheetTransitioningDelegate: UIViewControllerTransitioningDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -43,6 +45,28 @@ final class RootViewController: UIViewController {
     @objc
     private func handleShowBottomSheet() {
         let viewController = ResizeViewController(initialHeight: 300)
+        bottomSheetTransitioningDelegate = BottomSheetTransitioningDelegate(factory: self)
+        viewController.modalPresentationStyle = .custom
+        viewController.transitioningDelegate = bottomSheetTransitioningDelegate
         present(viewController, animated: true, completion: nil)
+    }
+}
+
+extension RootViewController: BottomSheetPresentationControllerFactory {
+    func makeBottomSheetPresentationController(
+        presentedViewController: UIViewController,
+        presentingViewController: UIViewController?
+    ) -> BottomSheetPresentationController {
+        .init(
+            presentedViewController: presentedViewController,
+            presentingViewController: presentingViewController,
+            dismissalHandler: self
+        )
+    }
+}
+
+extension RootViewController: BottomSheetModalDismissalHandler {
+    func performDismissal(animated: Bool) {
+        presentedViewController?.dismiss(animated: animated, completion: nil)
     }
 }

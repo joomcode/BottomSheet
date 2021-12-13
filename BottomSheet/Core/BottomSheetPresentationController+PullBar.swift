@@ -1,5 +1,5 @@
 //
-//  BottomSheetPresentationController+PullBar.swift
+//  BottomSheetPresentationController.swift
 //  BottomSheet
 //
 //  Created by Mikhail Maslo on 05.12.2021.

@@ -17,6 +17,8 @@ final class ResizeViewController: UIViewController {
         label.textAlignment = .center
         return label
     }()
+    private let _scrollView = UIScrollView()
+    private let scrollContentView = UIView()
     
     // MARK: - Private properties
 
@@ -62,7 +64,19 @@ final class ResizeViewController: UIViewController {
     private func setupSubviews() {
         view.backgroundColor = UIColor(red: 0.90, green: 0.90, blue: 0.90, alpha: 1)
         
-        view.addSubview(contentSizeLabel)
+        view.addSubview(_scrollView)
+        _scrollView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
+        
+        _scrollView.addSubview(scrollContentView)
+        scrollContentView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+            $0.width.equalTo(UIScreen.main.bounds.width)
+            $0.height.equalTo(currentHeight)
+        }
+        
+        scrollContentView.addSubview(contentSizeLabel)
         contentSizeLabel.snp.makeConstraints {
             $0.leading.top.trailing.equalToSuperview()
         }
@@ -86,7 +100,20 @@ final class ResizeViewController: UIViewController {
     private func updateContentHeight(newValue: CGFloat) {
         guard newValue >= 200 && newValue < 5000 else { return }
         
+        contentSizeLabel.text = "preferredContentHeight = \(newValue)"
         currentHeight = newValue
-        contentSizeLabel.text = "preferredContentHeight = \(currentHeight)"
+        
+        let updates = { [self] in
+            preferredContentSize = CGSize(
+                width: UIScreen.main.bounds.width,
+                height: newValue
+            )
+        }
+        let canAnimateChanges = viewIfLoaded?.window != nil
+        if canAnimateChanges {
+            UIView.animate(withDuration: 0.25, animations: updates)
+        } else {
+            updates()
+        }
     }
 }

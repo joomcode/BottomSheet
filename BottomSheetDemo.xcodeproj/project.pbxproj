@@ -23,8 +23,8 @@
 		7D7338D2274198DC004D7E59 /* UIScrollView+MulticastDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7338D1274198DC004D7E59 /* UIScrollView+MulticastDelegate.swift */; };
 		7D7338D4274269A3004D7E59 /* ResizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7338D3274269A3004D7E59 /* ResizeViewController.swift */; };
 		7D9E5EBB275CEB47009F5BB2 /* BottomSheetTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9E5EBA275CEB47009F5BB2 /* BottomSheetTransitioningDelegate.swift */; };
-		7D9E5EBD275CEBAA009F5BB2 /* BottomSheetPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9E5EBC275CEBAA009F5BB2 /* BottomSheetPresentationController.swift */; };
-		7D9E5EBF275CEBDA009F5BB2 /* BottomSheetPresentationController+PullBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9E5EBE275CEBDA009F5BB2 /* BottomSheetPresentationController+PullBar.swift */; };
+		7D9E5EBD275CEBAA009F5BB2 /* BottomSheetPresentationController+PullBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9E5EBC275CEBAA009F5BB2 /* BottomSheetPresentationController+PullBar.swift */; };
+		7D9E5EBF275CEBDA009F5BB2 /* BottomSheetPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9E5EBE275CEBDA009F5BB2 /* BottomSheetPresentationController.swift */; };
 		7D9E5EC1275CEBE4009F5BB2 /* BottomSheetModalDismissalHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9E5EC0275CEBE4009F5BB2 /* BottomSheetModalDismissalHandler.swift */; };
 		7DA9B01A27439FA100284B0F /* UIControl+EventHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA9B01927439FA100284B0F /* UIControl+EventHandling.swift */; };
 		7DA9B01D2743A11000284B0F /* UIViewController+Lifecycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA9B01C2743A11000284B0F /* UIViewController+Lifecycle.swift */; };
@@ -70,8 +70,8 @@
 		7D7338D1274198DC004D7E59 /* UIScrollView+MulticastDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+MulticastDelegate.swift"; sourceTree = "<group>"; };
 		7D7338D3274269A3004D7E59 /* ResizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizeViewController.swift; sourceTree = "<group>"; };
 		7D9E5EBA275CEB47009F5BB2 /* BottomSheetTransitioningDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetTransitioningDelegate.swift; sourceTree = "<group>"; };
-		7D9E5EBC275CEBAA009F5BB2 /* BottomSheetPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetPresentationController.swift; sourceTree = "<group>"; };
-		7D9E5EBE275CEBDA009F5BB2 /* BottomSheetPresentationController+PullBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BottomSheetPresentationController+PullBar.swift"; sourceTree = "<group>"; };
+		7D9E5EBC275CEBAA009F5BB2 /* BottomSheetPresentationController+PullBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BottomSheetPresentationController+PullBar.swift"; sourceTree = "<group>"; };
+		7D9E5EBE275CEBDA009F5BB2 /* BottomSheetPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetPresentationController.swift; sourceTree = "<group>"; };
 		7D9E5EC0275CEBE4009F5BB2 /* BottomSheetModalDismissalHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetModalDismissalHandler.swift; sourceTree = "<group>"; };
 		7DA9B01927439FA100284B0F /* UIControl+EventHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+EventHandling.swift"; sourceTree = "<group>"; };
 		7DA9B01C2743A11000284B0F /* UIViewController+Lifecycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Lifecycle.swift"; sourceTree = "<group>"; };
@@ -246,8 +246,8 @@
 			isa = PBXGroup;
 			children = (
 				7D9E5EC0275CEBE4009F5BB2 /* BottomSheetModalDismissalHandler.swift */,
-				7D9E5EBC275CEBAA009F5BB2 /* BottomSheetPresentationController.swift */,
-				7D9E5EBE275CEBDA009F5BB2 /* BottomSheetPresentationController+PullBar.swift */,
+				7D9E5EBC275CEBAA009F5BB2 /* BottomSheetPresentationController+PullBar.swift */,
+				7D9E5EBE275CEBDA009F5BB2 /* BottomSheetPresentationController.swift */,
 				7D9E5EBA275CEB47009F5BB2 /* BottomSheetTransitioningDelegate.swift */,
 			);
 			path = Core;
@@ -364,7 +364,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D733899274144A9004D7E59 /* CGPoint+Helpers.swift in Sources */,
-				7D9E5EBF275CEBDA009F5BB2 /* BottomSheetPresentationController+PullBar.swift in Sources */,
+				7D9E5EBF275CEBDA009F5BB2 /* BottomSheetPresentationController.swift in Sources */,
 				7D733898274144A9004D7E59 /* CGRect+Helpers.swift in Sources */,
 				7D0BBEED274B80AF00146286 /* UIEdgeInsets+Helpers.swift in Sources */,
 				7D7338D2274198DC004D7E59 /* UIScrollView+MulticastDelegate.swift in Sources */,
@@ -374,7 +374,7 @@
 				7D73389A274144A9004D7E59 /* CGSize+Helpers.swift in Sources */,
 				7D73389B274144A9004D7E59 /* BinaryFloatingPoint+Helpers.swift in Sources */,
 				7D73389C274144A9004D7E59 /* ScreenScale+Helpers.swift in Sources */,
-				7D9E5EBD275CEBAA009F5BB2 /* BottomSheetPresentationController.swift in Sources */,
+				7D9E5EBD275CEBAA009F5BB2 /* BottomSheetPresentationController+PullBar.swift in Sources */,
 				7D7338D027417D50004D7E59 /* UINavigationController+MulticastDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
