@@ -18,13 +18,17 @@ public final class BottomSheetPresentationController: UIPresentationController {
         case dismissing
     }
     
+    private enum Style {
+        static let cornerRadius: CGFloat = 10
+        static let pullBarHeight = Style.cornerRadius * 2
+    }
+    
     // MARK: - Private properties
     
     private var state: State = .dismissed
     
-    private let cornerRadius: CGFloat = 10
-    
     private var shadingView: UIView?
+    private var pullBar: PullBar?
     
     private let dismissalHandler: BottomSheetModalDismissalHandler
     
@@ -88,7 +92,7 @@ public final class BottomSheetPresentationController: UIPresentationController {
         guard presentedViewController.isViewLoaded else { return }
 
         presentedViewController.view.clipsToBounds = true
-        presentedViewController.view.layer.cornerRadius = cornerRadius
+        presentedViewController.view.layer.cornerRadius = Style.cornerRadius
     }
     
     private func updatePresentedViewSize() {
@@ -129,6 +133,15 @@ public final class BottomSheetPresentationController: UIPresentationController {
         }
         
         setupShadingView(containerView: containerView)
+        setupPullBar(containerView: containerView)
+    }
+    
+    private func setupPullBar(containerView: UIView) {
+        let pullBar = PullBar()
+        pullBar.frame.size = CGSize(width: containerView.frame.width, height: Style.pullBarHeight)
+        containerView.addSubview(pullBar)
+        
+        self.pullBar = pullBar
     }
     
     private func setupShadingView(containerView: UIView) {
@@ -153,6 +166,8 @@ public final class BottomSheetPresentationController: UIPresentationController {
     private func removeSubviews() {
         shadingView?.removeFromSuperview()
         shadingView = nil
+        pullBar?.removeFromSuperview()
+        pullBar = nil
     }
     
     @discardableResult
@@ -204,10 +219,12 @@ extension BottomSheetPresentationController: UIViewControllerAnimatedTransitioni
         )
         
         presentedView.frame = isPresenting ? offscreenFrame : frameInContainer
+        pullBar?.frame.origin.y = presentedView.frame.minY - Style.pullBarHeight + pixelSize
         shadingView?.alpha = isPresenting ? 0 : 1
-                
+        
         let animations = {
             presentedView.frame = isPresenting ? frameInContainer : offscreenFrame
+            self.pullBar?.frame.origin.y = presentedView.frame.minY - Style.pullBarHeight + pixelSize
             self.shadingView?.alpha = isPresenting ? 1 : 0
         }
         
