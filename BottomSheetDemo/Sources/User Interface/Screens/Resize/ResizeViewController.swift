@@ -86,7 +86,7 @@ final class ResizeViewController: UIViewController {
         stackView.distribution = .fillEqually
         stackView.spacing = 8
 
-        view.addSubview(stackView)
+        scrollContentView.addSubview(stackView)
         stackView.snp.makeConstraints {
             $0.top.equalTo(contentSizeLabel.snp.bottom).offset(8)
             $0.width.equalToSuperview().offset(-32)
@@ -104,6 +104,9 @@ final class ResizeViewController: UIViewController {
         currentHeight = newValue
         
         let updates = { [self] in
+            scrollContentView.snp.updateConstraints {
+                $0.height.equalTo(newValue)
+            }
             preferredContentSize = CGSize(
                 width: UIScreen.main.bounds.width,
                 height: newValue
