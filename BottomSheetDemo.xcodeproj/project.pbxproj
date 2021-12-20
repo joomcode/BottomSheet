@@ -22,6 +22,9 @@
 		7D7338D027417D50004D7E59 /* UINavigationController+MulticastDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7338CF27417D50004D7E59 /* UINavigationController+MulticastDelegate.swift */; };
 		7D7338D2274198DC004D7E59 /* UIScrollView+MulticastDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7338D1274198DC004D7E59 /* UIScrollView+MulticastDelegate.swift */; };
 		7D7338D4274269A3004D7E59 /* ResizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7338D3274269A3004D7E59 /* ResizeViewController.swift */; };
+		7D9B89F82771197200762A8A /* BottomSheetNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9B89F72771197200762A8A /* BottomSheetNavigationController.swift */; };
+		7D9B89FA2771197A00762A8A /* BottomSheetNavigationStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9B89F92771197A00762A8A /* BottomSheetNavigationStyle.swift */; };
+		7D9B89FC2771198500762A8A /* UIViewController+CustomInteractiveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9B89FB2771198500762A8A /* UIViewController+CustomInteractiveTransition.swift */; };
 		7D9E5EBB275CEB47009F5BB2 /* BottomSheetTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9E5EBA275CEB47009F5BB2 /* BottomSheetTransitioningDelegate.swift */; };
 		7D9E5EBD275CEBAA009F5BB2 /* BottomSheetPresentationController+PullBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9E5EBC275CEBAA009F5BB2 /* BottomSheetPresentationController+PullBar.swift */; };
 		7D9E5EBF275CEBDA009F5BB2 /* BottomSheetPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9E5EBE275CEBDA009F5BB2 /* BottomSheetPresentationController.swift */; };
@@ -69,6 +72,9 @@
 		7D7338CF27417D50004D7E59 /* UINavigationController+MulticastDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+MulticastDelegate.swift"; sourceTree = "<group>"; };
 		7D7338D1274198DC004D7E59 /* UIScrollView+MulticastDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+MulticastDelegate.swift"; sourceTree = "<group>"; };
 		7D7338D3274269A3004D7E59 /* ResizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizeViewController.swift; sourceTree = "<group>"; };
+		7D9B89F72771197200762A8A /* BottomSheetNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetNavigationController.swift; sourceTree = "<group>"; };
+		7D9B89F92771197A00762A8A /* BottomSheetNavigationStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetNavigationStyle.swift; sourceTree = "<group>"; };
+		7D9B89FB2771198500762A8A /* UIViewController+CustomInteractiveTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+CustomInteractiveTransition.swift"; sourceTree = "<group>"; };
 		7D9E5EBA275CEB47009F5BB2 /* BottomSheetTransitioningDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetTransitioningDelegate.swift; sourceTree = "<group>"; };
 		7D9E5EBC275CEBAA009F5BB2 /* BottomSheetPresentationController+PullBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BottomSheetPresentationController+PullBar.swift"; sourceTree = "<group>"; };
 		7D9E5EBE275CEBDA009F5BB2 /* BottomSheetPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetPresentationController.swift; sourceTree = "<group>"; };
@@ -225,6 +231,27 @@
 			path = Resize;
 			sourceTree = "<group>";
 		};
+		7D9B89F62771196600762A8A /* NavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				7D9B89F72771197200762A8A /* BottomSheetNavigationController.swift */,
+				7D9B89F92771197A00762A8A /* BottomSheetNavigationStyle.swift */,
+				7D9B89FB2771198500762A8A /* UIViewController+CustomInteractiveTransition.swift */,
+			);
+			path = NavigationController;
+			sourceTree = "<group>";
+		};
+		7D9B89FD2771199400762A8A /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				7D9E5EC0275CEBE4009F5BB2 /* BottomSheetModalDismissalHandler.swift */,
+				7D9E5EBC275CEBAA009F5BB2 /* BottomSheetPresentationController+PullBar.swift */,
+				7D9E5EBE275CEBDA009F5BB2 /* BottomSheetPresentationController.swift */,
+				7D9E5EBA275CEB47009F5BB2 /* BottomSheetTransitioningDelegate.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
 		7DA9B01727439F8400284B0F /* Screens */ = {
 			isa = PBXGroup;
 			children = (
@@ -245,10 +272,8 @@
 		7DF39478274A71A90094A703 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				7D9E5EC0275CEBE4009F5BB2 /* BottomSheetModalDismissalHandler.swift */,
-				7D9E5EBC275CEBAA009F5BB2 /* BottomSheetPresentationController+PullBar.swift */,
-				7D9E5EBE275CEBDA009F5BB2 /* BottomSheetPresentationController.swift */,
-				7D9E5EBA275CEB47009F5BB2 /* BottomSheetTransitioningDelegate.swift */,
+				7D9B89FD2771199400762A8A /* Presentation */,
+				7D9B89F62771196600762A8A /* NavigationController */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -365,11 +390,14 @@
 			files = (
 				7D733899274144A9004D7E59 /* CGPoint+Helpers.swift in Sources */,
 				7D9E5EBF275CEBDA009F5BB2 /* BottomSheetPresentationController.swift in Sources */,
+				7D9B89F82771197200762A8A /* BottomSheetNavigationController.swift in Sources */,
 				7D733898274144A9004D7E59 /* CGRect+Helpers.swift in Sources */,
 				7D0BBEED274B80AF00146286 /* UIEdgeInsets+Helpers.swift in Sources */,
+				7D9B89FA2771197A00762A8A /* BottomSheetNavigationStyle.swift in Sources */,
 				7D7338D2274198DC004D7E59 /* UIScrollView+MulticastDelegate.swift in Sources */,
 				7D9E5EC1275CEBE4009F5BB2 /* BottomSheetModalDismissalHandler.swift in Sources */,
 				7DA9B01D2743A11000284B0F /* UIViewController+Lifecycle.swift in Sources */,
+				7D9B89FC2771198500762A8A /* UIViewController+CustomInteractiveTransition.swift in Sources */,
 				7D9E5EBB275CEB47009F5BB2 /* BottomSheetTransitioningDelegate.swift in Sources */,
 				7D73389A274144A9004D7E59 /* CGSize+Helpers.swift in Sources */,
 				7D73389B274144A9004D7E59 /* BinaryFloatingPoint+Helpers.swift in Sources */,
