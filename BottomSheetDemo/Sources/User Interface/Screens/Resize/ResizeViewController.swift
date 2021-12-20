@@ -17,11 +17,34 @@ final class ResizeViewController: UIViewController {
         label.textAlignment = .center
         return label
     }()
+    
+    var isShowNextButtonHidden: Bool {
+        navigationController == nil
+    }
+    
+    var isShowRootButtonHidden: Bool {
+        navigationController?.viewControllers.count ?? 0 <= 1
+    }
+    
+    private let showNextButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .systemBlue
+        button.setTitle("Show next", for: .normal)
+        return button
+    }()
+    
+    private let showRootButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .systemPink
+        button.setTitle("Show root", for: .normal)
+        return button
+    }()
+    
     private let _scrollView = UIScrollView()
     private let scrollContentView = UIView()
     
     // MARK: - Private properties
-
+    
     private lazy var actions = [
         ButtonAction(title: "x2", backgroundColor: .systemBlue, handler: { [unowned self] in
             updateContentHeight(newValue: currentHeight * 2)
@@ -40,7 +63,7 @@ final class ResizeViewController: UIViewController {
     private var currentHeight: CGFloat
     
     // MARK: - Init
-
+    
     init(initialHeight: CGFloat) {
         currentHeight = initialHeight
         super.init(nibName: nil, bundle: nil)
@@ -80,12 +103,12 @@ final class ResizeViewController: UIViewController {
         contentSizeLabel.snp.makeConstraints {
             $0.leading.top.trailing.equalToSuperview()
         }
-
+        
         let buttons = actions.map(UIButton.init(buttonAction:))
         let stackView = UIStackView(arrangedSubviews: buttons)
         stackView.distribution = .fillEqually
         stackView.spacing = 8
-
+        
         scrollContentView.addSubview(stackView)
         stackView.snp.makeConstraints {
             $0.top.equalTo(contentSizeLabel.snp.bottom).offset(8)
@@ -93,10 +116,43 @@ final class ResizeViewController: UIViewController {
             $0.leading.trailing.equalToSuperview().inset(16)
             $0.height.equalTo(44)
         }
+        
+        if !isShowNextButtonHidden {
+            _scrollView.addSubview(showNextButton)
+            showNextButton.addTarget(self, action: #selector(handleShowNext), for: .touchUpInside)
+            showNextButton.snp.makeConstraints {
+                $0.top.equalTo(stackView.snp.bottom).offset(8)
+                $0.centerX.equalTo(stackView)
+                $0.width.equalTo(300)
+                $0.height.equalTo(50)
+            }
+        }
+        
+        if !isShowRootButtonHidden {
+            _scrollView.addSubview(showRootButton)
+            showRootButton.addTarget(self, action: #selector(handleShowRoot), for: .touchUpInside)
+            showRootButton.snp.makeConstraints {
+                $0.top.equalTo(isShowNextButtonHidden ? stackView.snp.bottom : showNextButton.snp.bottom).offset(8)
+                $0.centerX.equalTo(stackView)
+                $0.width.equalTo(300)
+                $0.height.equalTo(50)
+            }
+        }
     }
     
     // MARK: - Private methods
-        
+    
+    @objc
+    private func handleShowNext() {
+        let viewController = ResizeViewController(initialHeight: currentHeight)
+        navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    @objc
+    private func handleShowRoot() {
+        navigationController?.popToRootViewController(animated: true)
+    }
+    
     private func updateContentHeight(newValue: CGFloat) {
         guard newValue >= 200 && newValue < 5000 else { return }
         
