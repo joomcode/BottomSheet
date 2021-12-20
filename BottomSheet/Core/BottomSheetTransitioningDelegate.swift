@@ -51,6 +51,14 @@ public final class BottomSheetTransitioningDelegate: NSObject, UIViewControllerT
         _presentationController(forPresented: presented, presenting: presenting, source: source)
     }
     
+    public func interactionControllerForPresentation(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        presentationController?.interactiveTransitioning
+    }
+    
+    public func interactionControllerForDismissal(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        presentationController?.interactiveTransitioning
+    }
+    
     // MARK: - Private methods
     
     private func _presentationController(

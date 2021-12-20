@@ -120,3 +120,9 @@ final class ResizeViewController: UIViewController {
         }
     }
 }
+
+extension ResizeViewController: ScrollableBottomSheetPresentedController {
+    var scrollView: UIScrollView? {
+        _scrollView
+    }
+}
