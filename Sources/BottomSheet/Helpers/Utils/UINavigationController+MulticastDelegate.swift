@@ -53,10 +53,14 @@ public final class MulticastingNavigationControllerDelegate: NSObject {
             guard let self = self else { return }
 
             let newValue = change.newValue ?? nil
-            guard newValue !== self else {
+            let oldValue = change.oldValue ?? nil
+            guard oldValue !== newValue, newValue !== self else {
                 return
             }
             
+            if let newValue = newValue {
+                self.addDelegate(newValue)
+            }
             navigationController.delegate = self
         }
     }

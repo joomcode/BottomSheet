@@ -58,6 +58,9 @@ public final class MulticastingScrollViewDelegate: NSObject {
                 return
             }
             
+            if let newValue = newValue {
+                self.addDelegate(newValue)
+            }
             scrollView.delegate = self
         }
     }
