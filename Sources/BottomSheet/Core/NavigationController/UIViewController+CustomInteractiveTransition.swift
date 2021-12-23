@@ -11,13 +11,11 @@ import UIKit
 public extension UIViewController {
     // MARK: - Public properties
 
-    @objc(jm_interactivePopGestureRecognizer)
     private(set) var customInteractivePopGestureRecognizer: UIGestureRecognizer? {
         get { objc_getAssociatedObject(self, &Self.gestureRecognizerKey) as? UIGestureRecognizer }
         set { objc_setAssociatedObject(self, &Self.gestureRecognizerKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC) }
     }
 
-    @objc(jm_interactivePopTransitioning)
     var customInteractivePopTransitioning: UIViewControllerInteractiveTransitioning? { transition }
 
     // MARK: - Private properties
