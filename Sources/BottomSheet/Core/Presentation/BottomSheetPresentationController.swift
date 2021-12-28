@@ -267,6 +267,7 @@ public final class BottomSheetPresentationController: UIPresentationController {
 
         pullBar?.layer.mask = nil
         presentedViewController.view.layer.cornerRadius = Style.cornerRadius
+        presentedViewController.view.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     }
 
     private func addSubviews() {
