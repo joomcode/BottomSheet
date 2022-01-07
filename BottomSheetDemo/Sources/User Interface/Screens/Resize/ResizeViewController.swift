@@ -88,5 +88,9 @@ final class ResizeViewController: UIViewController {
         
         currentHeight = newValue
         contentSizeLabel.text = "preferredContentHeight = \(currentHeight)"
+        preferredContentSize = CGSize(
+            width: UIScreen.main.bounds.width,
+            height: newValue
+        )
     }
 }
