@@ -12,14 +12,16 @@ let package = Package(
         .library(
             name: "BottomSheet",
             targets: ["BottomSheet"]
-        ),
-    ],
-    dependencies: [
+        )
     ],
     targets: [
         .target(
-            name: "BottomSheet",
+            name: "BottomSheetUtils",
             dependencies: []
+        ),
+        .target(
+            name: "BottomSheet",
+            dependencies: ["BottomSheetUtils"]
         ),
     ]
 )
