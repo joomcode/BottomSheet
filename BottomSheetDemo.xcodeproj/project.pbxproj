@@ -13,6 +13,8 @@
 		7D05F3242741371400EBDBB1 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D05F3232741371400EBDBB1 /* RootViewController.swift */; };
 		7D05F33227413A1500EBDBB1 /* libBottomSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D05F32A274139E100EBDBB1 /* libBottomSheet.a */; };
 		7D05F342274140F700EBDBB1 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7D05F341274140F700EBDBB1 /* SnapKit */; };
+		7D59054827BD2DC70000BC17 /* BottomSheetUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D59054727BD2DC70000BC17 /* BottomSheetUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7D59054A27BD2DCE0000BC17 /* JMMulticastDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D59054927BD2DCE0000BC17 /* JMMulticastDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7D7338D4274269A3004D7E59 /* ResizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7338D3274269A3004D7E59 /* ResizeViewController.swift */; };
 		7DA6E0D9274F9186009F5C37 /* BottomSheetTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA6E0B4274F915A009F5C37 /* BottomSheetTransitioningDelegate.swift */; };
 		7DA6E0DA274F918A009F5C37 /* BottomSheetNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA6E0B6274F915A009F5C37 /* BottomSheetNavigationController.swift */; };
@@ -35,8 +37,6 @@
 		7DB24C8A27BD1813001030C7 /* BottomSheetUtils.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7DB24C8327BD1813001030C7 /* BottomSheetUtils.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7DB24C9327BD18F1001030C7 /* BottomSheetUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DB24C8327BD1813001030C7 /* BottomSheetUtils.framework */; };
 		7DB24CEC27BD1FAD001030C7 /* JMMulticastDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DB24CE927BD1FAD001030C7 /* JMMulticastDelegate.m */; };
-		7DB24CEE27BD1FAD001030C7 /* JMMulticastDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DB24CEB27BD1FAD001030C7 /* JMMulticastDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7DDA237927BD25C800D006FE /* BottomSheetUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DDA237827BD25C800D006FE /* BottomSheetUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +87,8 @@
 		7D05F3122741359C00EBDBB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7D05F3232741371400EBDBB1 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		7D05F32A274139E100EBDBB1 /* libBottomSheet.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBottomSheet.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D59054727BD2DC70000BC17 /* BottomSheetUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BottomSheetUtils.h; sourceTree = "<group>"; };
+		7D59054927BD2DCE0000BC17 /* JMMulticastDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMMulticastDelegate.h; sourceTree = "<group>"; };
 		7D7338D3274269A3004D7E59 /* ResizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizeViewController.swift; sourceTree = "<group>"; };
 		7DA6E0B4274F915A009F5C37 /* BottomSheetTransitioningDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomSheetTransitioningDelegate.swift; sourceTree = "<group>"; };
 		7DA6E0B6274F915A009F5C37 /* BottomSheetNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomSheetNavigationController.swift; sourceTree = "<group>"; };
@@ -107,8 +109,6 @@
 		7DA9B01927439FA100284B0F /* UIControl+EventHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+EventHandling.swift"; sourceTree = "<group>"; };
 		7DB24C8327BD1813001030C7 /* BottomSheetUtils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BottomSheetUtils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DB24CE927BD1FAD001030C7 /* JMMulticastDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMMulticastDelegate.m; sourceTree = "<group>"; };
-		7DB24CEB27BD1FAD001030C7 /* JMMulticastDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMMulticastDelegate.h; sourceTree = "<group>"; };
-		7DDA237827BD25C800D006FE /* BottomSheetUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BottomSheetUtils.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -322,7 +322,7 @@
 			isa = PBXGroup;
 			children = (
 				7DDA237727BD25C800D006FE /* include */,
-				7DB24CEB27BD1FAD001030C7 /* JMMulticastDelegate.h */,
+				7D59054727BD2DC70000BC17 /* BottomSheetUtils.h */,
 				7DB24CE927BD1FAD001030C7 /* JMMulticastDelegate.m */,
 			);
 			name = BottomSheetUtils;
@@ -332,7 +332,7 @@
 		7DDA237727BD25C800D006FE /* include */ = {
 			isa = PBXGroup;
 			children = (
-				7DDA237827BD25C800D006FE /* BottomSheetUtils.h */,
+				7D59054927BD2DCE0000BC17 /* JMMulticastDelegate.h */,
 			);
 			path = include;
 			sourceTree = "<group>";
@@ -344,8 +344,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7DB24CEE27BD1FAD001030C7 /* JMMulticastDelegate.h in Headers */,
-				7DDA237927BD25C800D006FE /* BottomSheetUtils.h in Headers */,
+				7D59054827BD2DC70000BC17 /* BottomSheetUtils.h in Headers */,
+				7D59054A27BD2DCE0000BC17 /* JMMulticastDelegate.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
