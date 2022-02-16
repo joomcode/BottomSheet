@@ -10,7 +10,7 @@ import UIKit
 import BottomSheet
 
 final class ResizeViewController: UIViewController {
-    // MARK: - Subviewss
+    // MARK: - Subviews
     
     private let contentSizeLabel: UILabel = {
         let label = UILabel()
