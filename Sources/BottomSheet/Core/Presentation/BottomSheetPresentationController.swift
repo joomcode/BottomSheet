@@ -534,6 +534,10 @@ extension BottomSheetPresentationController: UIViewControllerAnimatedTransitioni
 
         let completion = { (completed: Bool) in
             transitionContext.completeTransition(completed && !transitionContext.transitionWasCancelled)
+            // For fix bug: https://openradar.appspot.com/FB9075949
+            if transitionContext.transitionWasCancelled {
+                sourceView.frame = .zero
+            }
         }
 
         let options: UIView.AnimationOptions = transitionContext.isInteractive ? .curveLinear : .curveEaseInOut
