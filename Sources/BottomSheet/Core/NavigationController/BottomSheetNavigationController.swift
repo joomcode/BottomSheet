@@ -16,7 +16,20 @@ public final class BottomSheetNavigationController: UINavigationController {
     private var canAnimatePreferredContentSizeUpdates = false
     
     private weak var lastTransitionViewController: UIViewController?
-        
+
+    private let configuration: BottomSheetConfiguration
+
+    // MARK: - Init
+
+    public init(rootViewController: UIViewController, configuration: BottomSheetConfiguration) {
+        self.configuration = configuration
+        super.init(rootViewController: rootViewController)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     // MARK: - UIViewController
 
     public override func viewDidLoad() {
@@ -128,7 +141,7 @@ extension BottomSheetNavigationController: UINavigationControllerDelegate {
         }
         
         lastTransitionViewController = fromVC
-        return BottomSheetNavigationAnimatedTransitioning(operation: operation)
+        return BottomSheetNavigationAnimatedTransitioning(operation: operation, configuration: configuration)
     }
     
     public func navigationController(

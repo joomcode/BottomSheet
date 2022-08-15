@@ -15,12 +15,17 @@ public final class DefaultBottomSheetPresentationControllerFactory: BottomSheetP
 
     // MARK: - Public properties
 
+    private let configuration: BottomSheetConfiguration
     private let dismissalHandlerProvider: DismissalHandlerProvider
 
     // MARK: - Init
 
-    public init(dismissalHandlerProvider: @escaping DismissalHandlerProvider) {
+    public init(
+        configuration: BottomSheetConfiguration,
+        dismissalHandlerProvider: @escaping DismissalHandlerProvider
+    ) {
         self.dismissalHandlerProvider = dismissalHandlerProvider
+        self.configuration = configuration
     }
 
     // MARK: - BottomSheetPresentationControllerFactory
@@ -32,7 +37,8 @@ public final class DefaultBottomSheetPresentationControllerFactory: BottomSheetP
         BottomSheetPresentationController(
             presentedViewController: presentedViewController,
             presentingViewController: presentingViewController,
-            dismissalHandler: dismissalHandlerProvider()
+            dismissalHandler: dismissalHandlerProvider(),
+            configuration: configuration
         )
     }
 }
@@ -70,10 +76,10 @@ public extension UIViewController {
 
     private static var bottomSheetTransitionDelegateKey: UInt8 = 0
 
-    func presentBottomSheet(viewController: UIViewController) {
+    func presentBottomSheet(viewController: UIViewController, configuration: BottomSheetConfiguration) {
         weak var presentingViewController = self
         weak var currentBottomSheetTransitionDelegate: UIViewControllerTransitioningDelegate?
-        let presentationControllerFactory = DefaultBottomSheetPresentationControllerFactory {
+        let presentationControllerFactory = DefaultBottomSheetPresentationControllerFactory(configuration: configuration) {
             DefaultBottomSheetModalDismissalHandler(presentingViewController: presentingViewController) {
                 if currentBottomSheetTransitionDelegate === presentingViewController?.bottomSheetTransitionDelegate {
                     presentingViewController?.bottomSheetTransitionDelegate = nil
@@ -87,5 +93,10 @@ public extension UIViewController {
         viewController.transitioningDelegate = bottomSheetTransitionDelegate
         viewController.modalPresentationStyle = .custom
         present(viewController, animated: true, completion: nil)
+    }
+
+    func presentBottomSheetInsideNavigationController(viewController: UIViewController, configuration: BottomSheetConfiguration) {
+        let navigationController = BottomSheetNavigationController(rootViewController: viewController, configuration: configuration)
+        presentBottomSheet(viewController: navigationController, configuration: configuration)
     }
 }

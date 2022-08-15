@@ -12,11 +12,16 @@ public final class BottomSheetNavigationAnimatedTransitioning: NSObject, UIViewC
     // MARK: - Private
 
     private let operation: UINavigationController.Operation
+    private let configuration: BottomSheetConfiguration
 
     // MARK: - Init
 
-    public init(operation: UINavigationController.Operation) {
+    public init(
+        operation: UINavigationController.Operation,
+        configuration: BottomSheetConfiguration
+    ) {
         self.operation = operation
+        self.configuration = configuration
     }
 
     // MARK: - UIViewControllerAnimatedTransitioning
@@ -78,9 +83,10 @@ public final class BottomSheetNavigationAnimatedTransitioning: NSObject, UIViewC
             height: destinationViewController.preferredContentSize.height + destinationView.safeAreaInsets.top + destinationView.safeAreaInsets.bottom
         )
 
-        let maxHeight = containerViewWindow.bounds.size.height
-            - containerViewWindow.safeAreaInsets.top
-            - BottomSheetPresentationController.pullBarHeight
+        var maxHeight = containerViewWindow.bounds.size.height - containerViewWindow.safeAreaInsets.top
+        if case .visible(let appearance) = configuration.pullBarConfiguration {
+            maxHeight -= appearance.height
+        }
 
         let targetSize = CGSize(
             width: preferredContentSize.width,

@@ -51,7 +51,9 @@ final class RootViewController: UIViewController {
     @objc
     private func handleShowBottomSheet() {
         let viewController = ResizeViewController(initialHeight: 300)
-        let navigationController = BottomSheetNavigationController(rootViewController: viewController)
-        presentBottomSheet(viewController: navigationController)
+        presentBottomSheetInsideNavigationController(
+            viewController: viewController,
+            configuration: .default
+        )
     }
 }
