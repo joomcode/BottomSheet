@@ -7,6 +7,10 @@ Bottom Sheet component is designed to handle any content, including a scrolling 
 - ✅ build flows inside using `BottomSheetNavigationController`
     - ✅ supports all system transitions: push and (interactive) pop
     - ✅ transition animated between different content sizes
+- ✅ Customize appearance:
+    - pull bar visibility
+    - corner radius
+    - shadow background color
 
 ## How it looks like
 
@@ -28,16 +32,36 @@ To integrate Bottom Sheet into your Xcode project using Swift Package Manager, a
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/joomcode/BottomSheet", from: "1.0.0")
+    .package(url: "https://github.com/joomcode/BottomSheet", from: "2.0.0")
 ]
 ```
 
 ## Getting started
 
 This repo contains [demo](https://github.com/joomcode/BottomSheet/tree/main/BottomSheetDemo), which can be a great start for understanding Bottom Sheet usage, but here are simple steps to follow:
-1. Set content's size using [preferredContentSize](https://developer.apple.com/documentation/uikit/uiviewcontroller/1621476-preferredcontentsize)
-2. (optional) Conform to `ScrollableBottomSheetPresentedController` if your view controller is list-based
-3. Present using custom transition `BottomSheetTransitioningDelegate`
+1. Create `UIViewController` to present and set content's size by [preferredContentSize](https://developer.apple.com/documentation/uikit/uiviewcontroller/1621476-preferredcontentsize) property
+2. (optional) Conform to [ScrollableBottomSheetPresentedController](https://github.com/joomcode/BottomSheet/blob/81b0e2a7d405311b8456649452a8c49098490033/Sources/BottomSheet/Core/Presentation/BottomSheetPresentationController.swift#L12-L14) if your view controller is list-based
+3. Present by using [presentBottomSheet(viewController:configuration:)](https://github.com/joomcode/BottomSheet/blob/1870921364ed2cd68d51d7e7837e16e692278ff5/Sources/BottomSheet/Core/Extensions/UIViewController%2BConvenience.swift#L79)
+
+If you want to build flows, use `BottomSheetNavigationController`
+```Swift
+presentBottomSheetInsideNavigationController(
+    viewController: viewControllerToPresent,
+    configuration: .default
+)
+```
+
+You can customize appearance passing configuration parameter
+```Swift
+presentBottomSheet(
+    viewController: viewControllerToPresent,
+    configuration: BottomSheetConfiguration(
+        cornerRadius: 10,
+        pullBarConfiguration: .visible(.init(height: 20)),
+        shadowConfiguration: .init(backgroundColor: UIColor.black.withAlphaComponent(0.6))
+    )
+)
+```
 
 ## Resources
 

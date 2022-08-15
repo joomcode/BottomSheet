@@ -153,9 +153,17 @@ final class ResizeViewController: UIViewController {
     
     private func updateContentHeight(newValue: CGFloat) {
         guard newValue >= 200 && newValue < 5000 else { return }
-        
-        currentHeight = newValue
-        updatePreferredContentSize()
+
+        let updates = { [self] in
+            currentHeight = newValue
+            updatePreferredContentSize()
+        }
+
+        if navigationController == nil {
+            UIView.animate(withDuration: 0.25, animations: updates)
+        } else {
+            updates()
+        }
     }
     
     @objc

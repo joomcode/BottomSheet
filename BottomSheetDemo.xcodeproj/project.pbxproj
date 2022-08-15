@@ -37,6 +37,8 @@
 		7DB24C8A27BD1813001030C7 /* BottomSheetUtils.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7DB24C8327BD1813001030C7 /* BottomSheetUtils.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7DB24C9327BD18F1001030C7 /* BottomSheetUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DB24C8327BD1813001030C7 /* BottomSheetUtils.framework */; };
 		7DB24CEC27BD1FAD001030C7 /* JMMulticastDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DB24CE927BD1FAD001030C7 /* JMMulticastDelegate.m */; };
+		7DD5185028AA2FBA003F3D2A /* UIViewController+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD5184E28AA2F46003F3D2A /* UIViewController+Convenience.swift */; };
+		7DD5185328AA369E003F3D2A /* BottomSheetConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD5185128AA34D9003F3D2A /* BottomSheetConfiguration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +111,8 @@
 		7DA9B01927439FA100284B0F /* UIControl+EventHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+EventHandling.swift"; sourceTree = "<group>"; };
 		7DB24C8327BD1813001030C7 /* BottomSheetUtils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BottomSheetUtils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DB24CE927BD1FAD001030C7 /* JMMulticastDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMMulticastDelegate.m; sourceTree = "<group>"; };
+		7DD5184E28AA2F46003F3D2A /* UIViewController+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Convenience.swift"; sourceTree = "<group>"; };
+		7DD5185128AA34D9003F3D2A /* BottomSheetConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetConfiguration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,8 +247,10 @@
 			isa = PBXGroup;
 			children = (
 				7DA6E0B4274F915A009F5C37 /* BottomSheetTransitioningDelegate.swift */,
+				7DD5184D28AA2F3B003F3D2A /* Extensions */,
 				7DA6E0B5274F915A009F5C37 /* NavigationController */,
 				7DA6E0B9274F915A009F5C37 /* Presentation */,
+				7DD5185128AA34D9003F3D2A /* BottomSheetConfiguration.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -327,6 +333,14 @@
 			);
 			name = BottomSheetUtils;
 			path = Sources/BottomSheetUtils;
+			sourceTree = "<group>";
+		};
+		7DD5184D28AA2F3B003F3D2A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7DD5184E28AA2F46003F3D2A /* UIViewController+Convenience.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		7DDA237727BD25C800D006FE /* include */ = {
@@ -497,8 +511,10 @@
 				7DA6E0DE274F918E009F5C37 /* BottomSheetModalDismissalHandler.swift in Sources */,
 				7DA6E0DF274F918E009F5C37 /* BottomSheetPresentationController.swift in Sources */,
 				7DA6E0E7274F919A009F5C37 /* UIScrollView+MulticastDelegate.swift in Sources */,
+				7DD5185328AA369E003F3D2A /* BottomSheetConfiguration.swift in Sources */,
 				7DA6E0E8274F919A009F5C37 /* UINavigationController+MulticastDelegate.swift in Sources */,
 				7DA6E0E6274F9196009F5C37 /* CGSize+Helpers.swift in Sources */,
+				7DD5185028AA2FBA003F3D2A /* UIViewController+Convenience.swift in Sources */,
 				7DA6E0E2274F9196009F5C37 /* UIViewController+Lifecycle.swift in Sources */,
 				7DA6E0DC274F918A009F5C37 /* BottomSheetNavigationStyle.swift in Sources */,
 				7DA6E0DA274F918A009F5C37 /* BottomSheetNavigationController.swift in Sources */,
