@@ -7,7 +7,11 @@
 //
 
 import UIKit
+
+// cocoapods
+#if canImport(BottomSheetUtils)
 import BottomSheetUtils
+#endif
 
 extension UINavigationController {
     private static var transitionKey: UInt8 = 0
