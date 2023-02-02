@@ -53,7 +53,11 @@ final class RootViewController: UIViewController {
         let viewController = ResizeViewController(initialHeight: 300)
         presentBottomSheetInsideNavigationController(
             viewController: viewController,
-            configuration: .default
+            configuration: BottomSheetConfiguration(
+                cornerRadius: 10,
+                pullBarConfiguration: .visible(.init(height: 50)),
+                shadowConfiguration: .init(backgroundColor: UIColor.black.withAlphaComponent(0.6), blur: .light)
+            )
         )
     }
 }
