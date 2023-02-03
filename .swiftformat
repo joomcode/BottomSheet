@@ -32,7 +32,7 @@
 --nowrapoperators 
 --octalgrouping none
 --organizetypes actor,class,enum,struct
---patternlet hoist
+--patternlet inline
 --ranges spaced # ???
 --redundanttype inferred
 --self init-only
