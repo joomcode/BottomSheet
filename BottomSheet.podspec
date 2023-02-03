@@ -1,5 +1,5 @@
 Pod::Spec.new do |spec|
-  spec.name         = "JMBottomSheet"
+  spec.name         = "BottomSheet"
   spec.version      = "2.0.2"
   spec.summary      = "Bottom Sheet for iOS"
   spec.homepage     = "https://medium.com/joomtech/bottom-sheet-shall-we-drop-the-formalities-400515255829"
