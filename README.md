@@ -36,6 +36,25 @@ dependencies: [
 ]
 ```
 
+### CocoaPods
+
+[CocoaPods](http://cocoapods.org) is a dependency manager for Cocoa projects. You can install it with the following command:
+
+```bash
+$ bundle install
+```
+
+To integrate BottomSheet into your Xcode project using CocoaPods, specify it in your `Podfile`:
+
+```ruby
+source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
+
+target '<Your Target Name>' do
+    pod 'BottomSheet', '~> 2.0'
+end
+```
+
 ## Getting started
 
 This repo contains [demo](https://github.com/joomcode/BottomSheet/tree/main/BottomSheetDemo), which can be a great start for understanding Bottom Sheet usage, but here are simple steps to follow:
