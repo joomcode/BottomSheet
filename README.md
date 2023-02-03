@@ -51,7 +51,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
 target '<Your Target Name>' do
-    pod 'BottomSheet', '~> 2.0'
+    pod 'BottomSheet', :git => 'https://github.com/joomcode/BottomSheet'
 end
 ```
 
