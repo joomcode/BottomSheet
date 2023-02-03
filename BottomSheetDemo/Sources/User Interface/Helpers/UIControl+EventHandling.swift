@@ -14,7 +14,6 @@ struct ButtonAction {
     let handler: () -> Void
 }
 
-
 extension UIButton {
     private final class ButtonAdapter {
         private let handler: () -> Void
@@ -24,14 +23,14 @@ extension UIButton {
             self.handler = handler
             self.controlEvent = controlEvent
         }
-        
+
         @objc
         func handle() {
             handler()
         }
     }
 
-    static private var key: UInt8 = 0
+    private static var key: UInt8 = 0
 
     private var adapters: [ButtonAdapter] {
         get {
@@ -49,7 +48,7 @@ extension UIButton {
         setTitle(buttonAction.title, for: .normal)
         addEventHandler(handler: buttonAction.handler, controlEvent: .touchUpInside)
     }
-    
+
     func addEventHandler(handler: @escaping () -> Void, controlEvent: UIControl.Event) {
         let adapter = ButtonAdapter(handler: handler, controlEvent: controlEvent)
         addTarget(adapter, action: #selector(ButtonAdapter.handle), for: controlEvent)

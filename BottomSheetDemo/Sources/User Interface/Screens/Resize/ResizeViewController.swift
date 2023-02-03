@@ -6,42 +6,42 @@
 //  Copyright © 2021 Joom. All rights reserved.
 //
 
-import UIKit
 import BottomSheet
+import UIKit
 
 final class ResizeViewController: UIViewController {
     // MARK: - Subviews
-    
+
     private let contentSizeLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
         return label
     }()
-    
+
     var isShowNextButtonHidden: Bool {
         navigationController == nil
     }
-    
+
     var isShowRootButtonHidden: Bool {
         navigationController?.viewControllers.count ?? 0 <= 1
     }
-    
+
     private let showNextButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = .systemBlue
         button.setTitle("Show next", for: .normal)
         return button
     }()
-    
+
     private let showRootButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = .systemPink
         button.setTitle("Show root", for: .normal)
         return button
     }()
-    
+
     private let _scrollView = UIScrollView()
-    
+
     // MARK: - Private properties
 
     private lazy var actions = [
@@ -58,55 +58,56 @@ final class ResizeViewController: UIViewController {
             updateContentHeight(newValue: currentHeight - 100)
         }),
     ]
-    
+
     private var currentHeight: CGFloat {
         didSet {
             updatePreferredContentSize()
         }
     }
-    
+
     // MARK: - Init
 
     init(initialHeight: CGFloat) {
-        currentHeight = initialHeight
+        self.currentHeight = initialHeight
         super.init(nibName: nil, bundle: nil)
     }
-    
+
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     // MARK: - UIViewCoontroller
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         setupSubviews()
         updatePreferredContentSize()
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+
         view.setNeedsLayout()
     }
-    
+
     // MARK: - Setup
-    
+
     private func setupSubviews() {
         view.backgroundColor = .white
-        
+
         view.addSubview(_scrollView)
         _scrollView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
         _scrollView.alwaysBounceVertical = true
-        
+
         _scrollView.addSubview(contentSizeLabel)
         contentSizeLabel.snp.makeConstraints {
             $0.leading.top.trailing.equalToSuperview()
         }
-        
+
         let buttons = actions.map(UIButton.init(buttonAction:))
         let stackView = UIStackView(arrangedSubviews: buttons)
         stackView.distribution = .fillEqually
@@ -119,7 +120,7 @@ final class ResizeViewController: UIViewController {
             $0.leading.trailing.equalToSuperview().inset(16)
             $0.height.equalTo(44)
         }
-        
+
         if !isShowNextButtonHidden {
             _scrollView.addSubview(showNextButton)
             showNextButton.addTarget(self, action: #selector(handleShowNext), for: .touchUpInside)
@@ -130,7 +131,7 @@ final class ResizeViewController: UIViewController {
                 $0.height.equalTo(50)
             }
         }
-        
+
         if !isShowRootButtonHidden {
             _scrollView.addSubview(showRootButton)
             showRootButton.addTarget(self, action: #selector(handleShowRoot), for: .touchUpInside)
@@ -142,17 +143,17 @@ final class ResizeViewController: UIViewController {
             }
         }
     }
-    
+
     // MARK: - Private methods
-    
+
     private func updatePreferredContentSize() {
         _scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: currentHeight)
         contentSizeLabel.text = "preferredContentHeight = \(currentHeight)"
         preferredContentSize = _scrollView.contentSize
     }
-    
+
     private func updateContentHeight(newValue: CGFloat) {
-        guard newValue >= 200 && newValue < 5000 else { return }
+        guard newValue >= 200, newValue < 5000 else { return }
 
         let updates = { [self] in
             currentHeight = newValue
@@ -165,18 +166,17 @@ final class ResizeViewController: UIViewController {
             updates()
         }
     }
-    
+
     @objc
     private func handleShowNext() {
         let viewController = ResizeViewController(initialHeight: currentHeight)
         navigationController?.pushViewController(viewController, animated: true)
     }
-    
+
     @objc
     private func handleShowRoot() {
         navigationController?.popToRootViewController(animated: true)
     }
-    
 }
 
 // MARK: - ScrollableBottomSheetPresentedController

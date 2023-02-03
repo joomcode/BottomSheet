@@ -14,7 +14,7 @@ public final class BottomSheetNavigationController: UINavigationController {
     private var isUpdatingNavigationStack = false
 
     private var canAnimatePreferredContentSizeUpdates = false
-    
+
     private weak var lastTransitionViewController: UIViewController?
 
     private let configuration: BottomSheetConfiguration
@@ -26,6 +26,7 @@ public final class BottomSheetNavigationController: UINavigationController {
         super.init(rootViewController: rootViewController)
     }
 
+    @available(*, unavailable)
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -34,7 +35,7 @@ public final class BottomSheetNavigationController: UINavigationController {
 
     public override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         delegate = self
 
         view.clipsToBounds = true
@@ -42,7 +43,7 @@ public final class BottomSheetNavigationController: UINavigationController {
 
         modalPresentationStyle = .custom
     }
-    
+
     // MARK: - UINavigationController
 
     public override func setViewControllers(_ viewControllers: [UIViewController], animated: Bool) {
@@ -66,7 +67,7 @@ public final class BottomSheetNavigationController: UINavigationController {
 
         return viewController
     }
-    
+
     public override func popToRootViewController(animated: Bool) -> [UIViewController]? {
         var viewControllers: [UIViewController]?
 
@@ -88,7 +89,7 @@ public final class BottomSheetNavigationController: UINavigationController {
             updatePreferredContentSize()
             view.layoutIfNeeded()
         }
-        
+
         if canAnimatePreferredContentSizeUpdates {
             UIView.animate(withDuration: 0.25, animations: updates)
         } else {
@@ -97,7 +98,7 @@ public final class BottomSheetNavigationController: UINavigationController {
 
         canAnimatePreferredContentSizeUpdates = true
     }
-    
+
     // MARK: - Private methods
 
     private func updateNavigationStack(animated: Bool, applyChanges: () -> Void) {
@@ -139,11 +140,11 @@ extension BottomSheetNavigationController: UINavigationControllerDelegate {
         if operation == .push {
             toVC.setupCustomInteractivePopTransition()
         }
-        
+
         lastTransitionViewController = fromVC
         return BottomSheetNavigationAnimatedTransitioning(operation: operation, configuration: configuration)
     }
-    
+
     public func navigationController(
         _ navigationController: UINavigationController,
         interactionControllerFor animationController: UIViewControllerAnimatedTransitioning
