@@ -6,8 +6,8 @@
 //  Copyright © 2021 Joom. All rights reserved.
 //
 
-import UIKit
 import Combine
+import UIKit
 
 public protocol ScrollableBottomSheetPresentedController: AnyObject {
     var scrollView: UIScrollView? { get }
@@ -286,9 +286,9 @@ public final class BottomSheetPresentationController: UIPresentationController {
     private func addShadow(containerView: UIView) {
         var shadingView = UIView()
         if let blur = configuration.shadowConfiguration.blur {
-            shadingView = UIVisualEffectView.init(effect: UIBlurEffect.init(style: blur))
+            shadingView = UIVisualEffectView(effect: UIBlurEffect(style: blur))
         }
-        
+
         shadingView.backgroundColor = configuration.shadowConfiguration.backgroundColor
         containerView.addSubview(shadingView)
         shadingView.frame = containerView.bounds
@@ -300,7 +300,7 @@ public final class BottomSheetPresentationController: UIPresentationController {
 
         self.shadingView = shadingView
     }
-    
+
     @objc
     private func handleShadingViewTapGesture() {
         dismissIfPossible()
@@ -374,25 +374,25 @@ extension BottomSheetPresentationController: UIScrollViewDelegate {
         // We don't want bounces inside bottom sheet
         let previousTranslation = scrollViewTranslation
         scrollViewTranslation = scrollView.panGestureRecognizer.translation(in: scrollView).y
-        
+
         didStartDragging = shouldDragOverlay(following: scrollView)
         if didStartDragging {
             startInteractiveTransitionIfNeeded()
             overlayTranslation += scrollViewTranslation - previousTranslation
-            
+
             // Update scrollView contentInset without invoking scrollViewDidScroll(_:)
             scrollView.bounds.origin.y = -scrollView.adjustedContentInset.top
-            
+
             updateInteractionControllerProgress(verticalTranslation: overlayTranslation)
         } else {
             lastContentOffsetBeforeDragging = scrollView.panGestureRecognizer.translation(in: scrollView)
         }
     }
-    
+
     public func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         isDragging = true
     }
-    
+
     public func scrollViewWillEndDragging(
         _ scrollView: UIScrollView,
         withVelocity velocity: CGPoint,
@@ -408,32 +408,32 @@ extension BottomSheetPresentationController: UIScrollViewDelegate {
         } else {
             endInteractiveTransition(isCancelled: true)
         }
-        
+
         overlayTranslation = 0
         scrollViewTranslation = 0
         lastContentOffsetBeforeDragging = .zero
         didStartDragging = false
         isDragging = false
     }
-    
+
     private func startInteractiveTransitionIfNeeded() {
         guard interactionController == nil else {
             return
         }
-        
+
         startInteractiveTransition()
     }
-    
+
     private func shouldDragOverlay(following scrollView: UIScrollView) -> Bool {
         guard scrollView.isTracking, isInteractiveTransitionCanBeHandled else {
             return false
         }
-        
+
         if let percentComplete = interactionController?.percentComplete {
             if percentComplete.isAlmostEqual(to: 0) {
                 return scrollView.isContentOriginInBounds && scrollView.scrollsDown
             }
-            
+
             return true
         } else {
             return scrollView.isContentOriginInBounds && scrollView.scrollsDown
@@ -489,10 +489,10 @@ extension BottomSheetPresentationController: UINavigationControllerDelegate {
         else {
             return
         }
-        
+
         trackedScrollView?.multicastingDelegate.removeDelegate(self)
         scrollView.multicastingDelegate.addDelegate(self)
-        self.trackedScrollView = scrollView
+        trackedScrollView = scrollView
     }
 }
 
@@ -565,19 +565,18 @@ extension BottomSheetPresentationController: UIViewControllerAnimatedTransitioni
         UIView.animate(withDuration: transitionDurationValue, delay: 0, options: options, animations: animations, completion: completion)
     }
 
-    public func animationEnded(_ transitionCompleted: Bool) {
-    }
+    public func animationEnded(_ transitionCompleted: Bool) {}
 }
 
 private extension UIScrollView {
     var scrollsUp: Bool {
         panGestureRecognizer.velocity(in: nil).y < 0
     }
-    
+
     var scrollsDown: Bool {
         !scrollsUp
     }
-    
+
     var isContentOriginInBounds: Bool {
         contentOffset.y <= -adjustedContentInset.top
     }

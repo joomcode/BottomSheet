@@ -6,8 +6,8 @@
 //  Copyright © 2021 Joom. All rights reserved.
 //
 
-import UIKit
 import BottomSheet
+import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,16 +19,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     ) -> Bool {
         setupWindow()
         invokeLoad()
-        
+
         return true
     }
-    
+
     private func setupWindow() {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = RootViewController()
         window?.makeKeyAndVisible()
     }
-    
+
     private func invokeLoad() {
         UIViewController.swiftLoad()
     }

@@ -6,9 +6,9 @@
 //  Copyright © 2021 Joom. All rights reserved.
 //
 
-import UIKit
-import SnapKit
 import BottomSheet
+import SnapKit
+import UIKit
 
 final class RootViewController: UIViewController {
     private let button: UIButton = {
@@ -21,17 +21,18 @@ final class RootViewController: UIViewController {
     init() {
         super.init(nibName: nil, bundle: nil)
     }
-    
+
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         setupSubviews()
     }
-    
+
     private func setupSubviews() {
         if #available(iOS 13.0, *) {
             view.backgroundColor = .systemBackground
@@ -47,7 +48,7 @@ final class RootViewController: UIViewController {
             $0.height.equalTo(44)
         }
     }
-    
+
     @objc
     private func handleShowBottomSheet() {
         let viewController = ResizeViewController(initialHeight: 300)

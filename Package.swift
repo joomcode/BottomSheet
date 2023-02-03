@@ -6,13 +6,13 @@ import PackageDescription
 let package = Package(
     name: "BottomSheet",
     platforms: [
-        .iOS(.v12)
+        .iOS(.v12),
     ],
     products: [
         .library(
             name: "BottomSheet",
             targets: ["BottomSheet"]
-        )
+        ),
     ],
     targets: [
         .target(

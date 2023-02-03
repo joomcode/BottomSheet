@@ -20,13 +20,13 @@ public final class BottomSheetTransitioningDelegate: NSObject, UIViewControllerT
 
     private weak var presentationController: BottomSheetPresentationController?
     private let presentationControllerFactory: BottomSheetPresentationControllerFactory
-    
+
     // MARK: - Init
 
     public init(presentationControllerFactory: BottomSheetPresentationControllerFactory) {
         self.presentationControllerFactory = presentationControllerFactory
     }
-    
+
     // MARK: - UIViewControllerTransitioningDelegate
 
     public func animationController(
@@ -37,16 +37,13 @@ public final class BottomSheetTransitioningDelegate: NSObject, UIViewControllerT
         _presentationController(forPresented: presented, presenting: presenting, source: source)
     }
 
-    
     public func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         presentationController
     }
 
-    
     public func interactionControllerForPresentation(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
         presentationController?.interactiveTransition
     }
-
 
     public func interactionControllerForDismissal(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
         presentationController?.interactiveTransition
@@ -59,9 +56,9 @@ public final class BottomSheetTransitioningDelegate: NSObject, UIViewControllerT
     ) -> UIPresentationController? {
         _presentationController(forPresented: presented, presenting: presenting, source: source)
     }
-    
+
     // MARK: - Private methods
-    
+
     private func _presentationController(
         forPresented presented: UIViewController,
         presenting: UIViewController?,

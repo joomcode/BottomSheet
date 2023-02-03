@@ -53,7 +53,7 @@ public extension UIViewController {
     }
 
     // MARK: - Private methods
-    
+
     @objc
     private func handleGestureRecognizer(_ recognizer: UIScreenEdgePanGestureRecognizer) {
         switch recognizer.state {
