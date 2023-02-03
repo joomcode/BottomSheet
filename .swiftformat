@@ -1,0 +1,133 @@
+# Tool options
+--minversion 0.48.11
+--swiftversion 5.4
+
+# Format options
+--assetliterals visual-width
+--beforemarks 
+# Uncomment if we decide to enable `organizeDeclarations` rule
+#--categorymark "MARK: - %c"
+--conflictmarkers reject
+--exponentcase lowercase
+--extensionmark "MARK: - %t + %c"
+--fragment false
+--funcattributes prev-line
+--groupedextension "MARK: %c"
+--guardelse auto
+--header ignore
+--hexgrouping none
+--hexliteralcase lowercase
+--ifdef no-indent
+--importgrouping alpha
+--indent 4
+--indentcase false
+--lifecycle 
+--linebreaks lf
+--markextensions always
+--marktypes always
+--maxwidth none
+--modifierorder acl,setteracl,override,dynamic,mutators,lazy,final,class,static,required,convenience,typemethods,owned
+--nevertrailing 
+--nospaceoperators ...,..<
+--nowrapoperators 
+--octalgrouping none
+--organizetypes actor,class,enum,struct
+--patternlet hoist
+--ranges spaced # ???
+--redundanttype inferred
+--self init-only
+--selfrequired 
+--semicolons never
+--smarttabs enabled
+# Uncomment if we decide to enable `unusedArguments` rule
+#--stripunusedargs closure-only
+--structthreshold 0
+--tabwidth unspecified
+--trailingclosures 
+--trimwhitespace always
+--typeattributes prev-line
+--typemark "MARK: - %t"
+--varattributes prev-line
+--voidtype void
+--wraparguments before-first
+--wrapcollections before-first
+--wrapconditions before-first
+--wrapparameters before-first
+--wrapreturntype preserve
+--xcodeindentation disabled
+
+# Rules
+--rules andOperator
+--rules anyObjectProtocol
+--rules blankLinesAroundMark
+--rules blankLinesAtEndOfScope
+--rules blankLinesAtStartOfScope
+--rules blankLinesBetweenScopes
+--rules braces
+--rules consecutiveBlankLines
+--rules consecutiveSpaces
+--rules duplicateImports
+--rules elseOnSameLine
+--rules emptyBraces
+--disable enumNamespaces
+--rules extensionAccessControl
+--disable fileHeader
+--rules hoistPatternLet
+--rules indent
+--rules initCoderUnavailable
+--disable isEmpty
+--rules leadingDelimiters
+--rules linebreakAtEndOfFile
+--rules linebreaks
+--disable markTypes
+--rules modifierOrder
+--rules numberFormatting
+--disable organizeDeclarations
+--disable preferKeyPath
+--rules redundantBackticks
+--rules redundantBreak
+--rules redundantExtensionACL
+--rules redundantFileprivate
+--rules redundantGet
+--rules redundantInit
+--rules redundantLet
+--rules redundantLetError
+--rules redundantNilInit
+--rules redundantObjc
+--rules redundantParens
+--rules redundantPattern
+--rules redundantRawValues
+--rules redundantReturn
+--rules redundantSelf
+--rules redundantType
+--rules redundantVoidReturnType
+--rules semicolons
+--rules sortedImports
+--disable sortedSwitchCases
+--rules spaceAroundBraces
+--rules spaceAroundBrackets
+--rules spaceAroundComments
+--rules spaceAroundGenerics
+--rules spaceAroundOperators
+--rules spaceAroundParens
+--rules spaceInsideBraces
+--rules spaceInsideBrackets
+--rules spaceInsideComments
+--rules spaceInsideGenerics
+--rules spaceInsideParens
+--rules strongOutlets
+--rules strongifiedSelf
+--rules todos
+--rules trailingClosures
+--rules trailingCommas
+--rules trailingSpace
+--rules typeSugar
+--disable unusedArguments
+--rules void
+--disable wrap
+--rules wrapArguments
+--rules wrapAttributes
+--rules wrapEnumCases
+--rules wrapMultilineStatementBraces
+--disable wrapSwitchCases
+--rules yodaConditions
