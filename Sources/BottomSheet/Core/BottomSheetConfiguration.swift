@@ -27,10 +27,12 @@ public struct BottomSheetConfiguration {
     public struct ShadowConfiguration {
         public let backgroundColor: UIColor
         public let blur: UIBlurEffect.Style?
+        public let intensity: CGFloat
 
-        public init(backgroundColor: UIColor, blur: UIBlurEffect.Style? = nil) {
+        public init(backgroundColor: UIColor, blur: UIBlurEffect.Style? = nil, intensity: CGFloat? = nil) {
             self.backgroundColor = backgroundColor
             self.blur = blur
+            self.intensity = intensity ?? 0.1
         }
 
         public static let `default` = ShadowConfiguration(backgroundColor: UIColor.black.withAlphaComponent(0.6))
