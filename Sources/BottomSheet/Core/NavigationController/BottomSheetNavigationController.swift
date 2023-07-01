@@ -27,6 +27,7 @@ public final class BottomSheetNavigationController: UINavigationController {
     }
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        self.configuration = .default
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
 
