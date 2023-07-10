@@ -95,7 +95,7 @@ public extension UIViewController {
         present(viewController, animated: true, completion: nil)
     }
 
-    func presentBottomSheet(viewController: UIViewController, configuration: BottomSheetConfiguration, @escaping dissmisCompletion: (() -> Void)) {
+    func presentBottomSheet(viewController: UIViewController, configuration: BottomSheetConfiguration, dissmisCompletion: @escaping (() -> Void)) {
         weak var presentingViewController = self
         weak var currentBottomSheetTransitionDelegate: UIViewControllerTransitioningDelegate?
         let presentationControllerFactory = DefaultBottomSheetPresentationControllerFactory(configuration: configuration) {
