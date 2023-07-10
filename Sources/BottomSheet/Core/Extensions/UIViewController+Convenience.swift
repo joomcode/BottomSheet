@@ -95,6 +95,26 @@ public extension UIViewController {
         present(viewController, animated: true, completion: nil)
     }
 
+    func presentBottomSheet(viewController: UIViewController, configuration: BottomSheetConfiguration, dissmisCompletion: (() -> Void)) {
+        weak var presentingViewController = self
+        weak var currentBottomSheetTransitionDelegate: UIViewControllerTransitioningDelegate?
+        let presentationControllerFactory = DefaultBottomSheetPresentationControllerFactory(configuration: configuration) {
+            DefaultBottomSheetModalDismissalHandler(presentingViewController: presentingViewController) {
+                if currentBottomSheetTransitionDelegate === presentingViewController?.bottomSheetTransitionDelegate {
+                    presentingViewController?.bottomSheetTransitionDelegate = nil
+                }
+                dissmisCompletion()
+            }
+        }
+        bottomSheetTransitionDelegate = BottomSheetTransitioningDelegate(
+            presentationControllerFactory: presentationControllerFactory
+        )
+        currentBottomSheetTransitionDelegate = bottomSheetTransitionDelegate
+        viewController.transitioningDelegate = bottomSheetTransitionDelegate
+        viewController.modalPresentationStyle = .custom
+        present(viewController, animated: true, completion: nil)
+    }
+
     func presentBottomSheetInsideNavigationController(viewController: UIViewController, configuration: BottomSheetConfiguration) {
         let navigationController = BottomSheetNavigationController(rootViewController: viewController, configuration: configuration)
         presentBottomSheet(viewController: navigationController, configuration: configuration)
