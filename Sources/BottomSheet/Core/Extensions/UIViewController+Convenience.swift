@@ -47,21 +47,26 @@ public final class DefaultBottomSheetModalDismissalHandler: BottomSheetModalDism
     // MARK: - Private properties
 
     private weak var presentingViewController: UIViewController?
+    private let _canBeDismissed: () -> Bool
     private let dismissCompletion: (() -> Void)?
 
     // MARK: - Init
 
     init(
         presentingViewController: UIViewController?,
+        canBeDismissed: @escaping (() -> Bool),
         dismissCompletion: (() -> Void)?
     ) {
         self.presentingViewController = presentingViewController
+        self._canBeDismissed = canBeDismissed
         self.dismissCompletion = dismissCompletion
     }
 
     // MARK: - BottomSheetModalDismissalHandler
 
-    public let canBeDismissed = true
+    public var canBeDismissed: Bool {
+        _canBeDismissed()
+    }
 
     public func performDismissal(animated: Bool) {
         presentingViewController?.presentedViewController?.dismiss(animated: animated, completion: dismissCompletion)
@@ -76,14 +81,20 @@ public extension UIViewController {
 
     private static var bottomSheetTransitionDelegateKey: UInt8 = 0
 
-    func presentBottomSheet(viewController: UIViewController, configuration: BottomSheetConfiguration) {
+    func presentBottomSheet(
+        viewController: UIViewController,
+        configuration: BottomSheetConfiguration,
+        canBeDismissed: @escaping (() -> Bool) = { true },
+        dismissCompletion: (() -> Void)? = nil
+    ) {
         weak var presentingViewController = self
         weak var currentBottomSheetTransitionDelegate: UIViewControllerTransitioningDelegate?
         let presentationControllerFactory = DefaultBottomSheetPresentationControllerFactory(configuration: configuration) {
-            DefaultBottomSheetModalDismissalHandler(presentingViewController: presentingViewController) {
+            DefaultBottomSheetModalDismissalHandler(presentingViewController: presentingViewController, canBeDismissed: canBeDismissed) {
                 if currentBottomSheetTransitionDelegate === presentingViewController?.bottomSheetTransitionDelegate {
                     presentingViewController?.bottomSheetTransitionDelegate = nil
                 }
+                dismissCompletion?()
             }
         }
         bottomSheetTransitionDelegate = BottomSheetTransitioningDelegate(
