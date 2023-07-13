@@ -40,6 +40,13 @@ final class ResizeViewController: UIViewController {
         return button
     }()
 
+    private let textField: UITextField = {
+        let textField = UITextField()
+        textField.borderStyle = .line
+        return textField
+    }()
+
+    private var keyboardHeight: CGFloat = 0.0
     private let _scrollView = UIScrollView()
 
     // MARK: - Private properties
@@ -82,6 +89,8 @@ final class ResizeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupKeyboardBindings()
+
         setupSubviews()
         updatePreferredContentSize()
     }
@@ -90,6 +99,41 @@ final class ResizeViewController: UIViewController {
         super.viewWillAppear(animated)
 
         view.setNeedsLayout()
+    }
+
+    private func setupKeyboardBindings() {
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillShow),
+            name: UIResponder.keyboardWillShowNotification,
+            object: nil
+        )
+
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillHide),
+            name: UIResponder.keyboardWillHideNotification,
+            object: nil
+        )
+    }
+
+    @objc
+    func keyboardWillShow(_ notification: Notification) {
+        keyboardHeight = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.height ?? 0
+        updatePreferredContentSize()
+    }
+
+    @objc
+    func keyboardWillHide(_ notification: Notification) {
+        keyboardHeight = 0
+        updatePreferredContentSize()
+    }
+
+    func calculatePreferredContentSize() -> CGSize {
+        CGSize(
+            width: view.bounds.width,
+            height: _scrollView.contentSize.height + additionalSafeAreaInsets.top + max(additionalSafeAreaInsets.bottom, keyboardHeight)
+        )
     }
 
     // MARK: - Setup
@@ -109,7 +153,7 @@ final class ResizeViewController: UIViewController {
         }
 
         let buttons = actions.map(UIButton.init(buttonAction:))
-        let stackView = UIStackView(arrangedSubviews: buttons)
+        let stackView = UIStackView(arrangedSubviews: [textField] + buttons)
         stackView.distribution = .fillEqually
         stackView.spacing = 8
 
@@ -149,7 +193,7 @@ final class ResizeViewController: UIViewController {
     private func updatePreferredContentSize() {
         _scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: currentHeight)
         contentSizeLabel.text = "preferredContentHeight = \(currentHeight)"
-        preferredContentSize = _scrollView.contentSize
+        preferredContentSize = calculatePreferredContentSize()
     }
 
     private func updateContentHeight(newValue: CGFloat) {
@@ -165,6 +209,8 @@ final class ResizeViewController: UIViewController {
         } else {
             updates()
         }
+
+        view.endEditing(true)
     }
 
     @objc
