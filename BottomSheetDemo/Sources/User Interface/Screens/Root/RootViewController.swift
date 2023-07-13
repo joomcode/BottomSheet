@@ -56,11 +56,11 @@ final class RootViewController: UIViewController {
             viewController: viewController,
             configuration: .default,
             canBeDismissed: {
-                // return true / false based on your business logic
+                // return `true` or `false` based on your business logic
                 true
             },
             dismissCompletion: {
-                // react on dismiss completion
+                // handle dismiss completion if user closed bottom sheet by a gesture
             }
         )
     }
