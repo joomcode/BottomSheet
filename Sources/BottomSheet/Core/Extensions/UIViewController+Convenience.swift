@@ -69,7 +69,12 @@ public final class DefaultBottomSheetModalDismissalHandler: BottomSheetModalDism
     }
 
     public func performDismissal(animated: Bool) {
-        presentingViewController?.presentedViewController?.dismiss(animated: animated, completion: dismissCompletion)
+        if let presentedViewController = presentingViewController {
+            presentedViewController.dismiss(animated: animated, completion: dismissCompletion)
+        } else {
+            // User dismissed view controller by swipe-gesture, dismiss handler wasn't invoked
+            dismissCompletion?()
+        }
     }
 }
 
@@ -106,8 +111,18 @@ public extension UIViewController {
         present(viewController, animated: true, completion: nil)
     }
 
-    func presentBottomSheetInsideNavigationController(viewController: UIViewController, configuration: BottomSheetConfiguration) {
+    func presentBottomSheetInsideNavigationController(
+        viewController: UIViewController,
+        configuration: BottomSheetConfiguration,
+        canBeDismissed: @escaping (() -> Bool) = { true },
+        dismissCompletion: (() -> Void)? = nil
+    ) {
         let navigationController = BottomSheetNavigationController(rootViewController: viewController, configuration: configuration)
-        presentBottomSheet(viewController: navigationController, configuration: configuration)
+        presentBottomSheet(
+            viewController: navigationController,
+            configuration: configuration,
+            canBeDismissed: canBeDismissed,
+            dismissCompletion: dismissCompletion
+        )
     }
 }

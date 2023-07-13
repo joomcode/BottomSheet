@@ -78,7 +78,14 @@ presentBottomSheet(
         cornerRadius: 10,
         pullBarConfiguration: .visible(.init(height: 20)),
         shadowConfiguration: .init(backgroundColor: UIColor.black.withAlphaComponent(0.6))
-    )
+    ),
+    canBeDismissed: {
+        // return `true` or `false` based on your business logic
+        true
+    },
+    dismissCompletion: {
+        // handle dismiss completion if user closed bottom sheet by a gesture
+    }
 )
 ```
 
