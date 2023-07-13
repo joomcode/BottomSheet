@@ -69,7 +69,12 @@ public final class DefaultBottomSheetModalDismissalHandler: BottomSheetModalDism
     }
 
     public func performDismissal(animated: Bool) {
-        presentingViewController?.presentedViewController?.dismiss(animated: animated, completion: dismissCompletion)
+        if let presentedViewController = presentingViewController {
+            presentedViewController.dismiss(animated: animated, completion: dismissCompletion)
+        } else {
+            // User dismissed view controller by swipe-gesture, dismiss handler wasn't invoked
+            dismissCompletion?()
+        }
     }
 }
 
