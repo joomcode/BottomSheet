@@ -54,7 +54,14 @@ final class RootViewController: UIViewController {
         let viewController = ResizeViewController(initialHeight: 300)
         presentBottomSheetInsideNavigationController(
             viewController: viewController,
-            configuration: .default
+            configuration: .default,
+            canBeDismissed: {
+                // return true / false based on your business logic
+                true
+            },
+            dismissCompletion: {
+                // react on dismiss completion
+            }
         )
     }
 }

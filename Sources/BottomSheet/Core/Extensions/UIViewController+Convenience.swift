@@ -106,8 +106,18 @@ public extension UIViewController {
         present(viewController, animated: true, completion: nil)
     }
 
-    func presentBottomSheetInsideNavigationController(viewController: UIViewController, configuration: BottomSheetConfiguration) {
+    func presentBottomSheetInsideNavigationController(
+        viewController: UIViewController,
+        configuration: BottomSheetConfiguration,
+        canBeDismissed: @escaping (() -> Bool) = { true },
+        dismissCompletion: (() -> Void)? = nil
+    ) {
         let navigationController = BottomSheetNavigationController(rootViewController: viewController, configuration: configuration)
-        presentBottomSheet(viewController: navigationController, configuration: configuration)
+        presentBottomSheet(
+            viewController: navigationController,
+            configuration: configuration,
+            canBeDismissed: canBeDismissed,
+            dismissCompletion: dismissCompletion
+        )
     }
 }
