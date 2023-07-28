@@ -192,7 +192,7 @@ public final class BottomSheetPresentationController: UIPresentationController {
     private func startInteractiveTransition() {
         interactionController = UIPercentDrivenInteractiveTransition()
 
-        presentingViewController.dismiss(animated: true) { [weak self] in
+        presentedViewController.dismiss(animated: true) { [weak self] in
             guard let self = self else { return }
 
             if self.presentingViewController.presentedViewController !== self.presentedViewController {
