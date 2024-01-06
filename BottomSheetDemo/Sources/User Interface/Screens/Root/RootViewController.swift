@@ -60,7 +60,7 @@ final class RootViewController: UIViewController {
                 true
             },
             dismissCompletion: {
-                // handle dismiss completion if user closed bottom sheet by a gesture
+                // handle bottom sheet dismissal completion
             }
         )
     }
