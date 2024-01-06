@@ -81,7 +81,7 @@ public final class DefaultBottomSheetModalDismissalHandler: BottomSheetModalDism
         didInvokeDismissal = true
     }
 
-    public func didDismiss() {
+    public func didEndDismissal() {
         guard !didInvokeDismissal else { return }
 
         dismissCompletion?()

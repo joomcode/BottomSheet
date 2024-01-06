@@ -11,5 +11,5 @@ public protocol BottomSheetModalDismissalHandler {
 
     func performDismissal(animated: Bool)
 
-    func didDismiss()
+    func didEndDismissal()
 }
