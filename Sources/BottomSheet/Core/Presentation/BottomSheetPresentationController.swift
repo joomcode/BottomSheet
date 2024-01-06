@@ -144,6 +144,7 @@ public final class BottomSheetPresentationController: UIPresentationController {
             removeScrollTrackingIfNeeded()
 
             state = .dismissed
+            dismissalHandler.didDismiss()
         } else {
             state = .presented
         }
