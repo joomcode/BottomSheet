@@ -150,7 +150,11 @@ public final class BottomSheetPresentationController: UIPresentationController {
     }
 
     public override var shouldPresentInFullscreen: Bool {
-        true
+        if #available(iOS 17.0, *) {
+            return true
+        } else {
+            return false
+        }
     }
 
     public override var frameOfPresentedViewInContainerView: CGRect {
