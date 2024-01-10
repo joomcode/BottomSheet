@@ -50,6 +50,8 @@ public final class DefaultBottomSheetModalDismissalHandler: BottomSheetModalDism
     private let _canBeDismissed: () -> Bool
     private let dismissCompletion: (() -> Void)?
 
+    private var didInvokeDismissal = false
+
     // MARK: - Init
 
     init(
@@ -75,6 +77,14 @@ public final class DefaultBottomSheetModalDismissalHandler: BottomSheetModalDism
             // User dismissed view controller by swipe-gesture, dismiss handler wasn't invoked
             dismissCompletion?()
         }
+
+        didInvokeDismissal = true
+    }
+
+    public func didEndDismissal() {
+        guard !didInvokeDismissal else { return }
+
+        dismissCompletion?()
     }
 }
 
