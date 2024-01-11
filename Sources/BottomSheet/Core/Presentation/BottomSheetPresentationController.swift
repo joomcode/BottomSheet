@@ -291,7 +291,7 @@ public final class BottomSheetPresentationController: UIPresentationController {
     private func addShadow(containerView: UIView) {
         var shadingView = UIView()
         if let blur = configuration.shadowConfiguration.blur {
-            shadingView = UIVisualEffectView(effect: UIBlurEffect(style: blur))
+            shadingView = CustomIntensityVisualEffectView.init(effect: UIBlurEffect.init(style: blur), intensity: configuration.shadowConfiguration.intensity)
         }
 
         shadingView.backgroundColor = configuration.shadowConfiguration.backgroundColor
