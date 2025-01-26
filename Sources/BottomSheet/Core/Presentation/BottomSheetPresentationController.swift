@@ -13,6 +13,22 @@ public protocol ScrollableBottomSheetPresentedController: AnyObject {
     var scrollView: UIScrollView? { get }
 }
 
+class TouchDelegatingView: UIView {
+    weak var touchDelegate: UIView?
+
+    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        guard let view = super.hitTest(point, with: event) else {
+            return nil
+        }
+
+        guard view === self, let point = touchDelegate?.convert(point, from: self) else {
+            return view
+        }
+
+        return touchDelegate?.hitTest(point, with: event)
+    }
+}
+
 public final class BottomSheetPresentationController: UIPresentationController {
     // MARK: - Nested
 
@@ -289,10 +305,8 @@ public final class BottomSheetPresentationController: UIPresentationController {
     }
 
     private func addShadow(containerView: UIView) {
-        var shadingView = UIView()
-        if let blur = configuration.shadowConfiguration.blur {
-            shadingView = UIVisualEffectView(effect: UIBlurEffect(style: blur))
-        }
+        let shadingView = TouchDelegatingView()
+        shadingView.touchDelegate = presentingViewController.view
 
         shadingView.backgroundColor = configuration.shadowConfiguration.backgroundColor
         containerView.addSubview(shadingView)
